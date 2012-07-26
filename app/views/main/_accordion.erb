@@ -1,0 +1,12 @@
+<div id="accordion_wrapper">
+	<%Category.all.each do |cat| %>
+		<h3 class="AccordionHeader"><%= cat.title%></h3>
+		<div class="AccordionContent">
+			<div class="menuList">
+			<%cat.subcategories.each do |sub| %>
+				<span><%=sub.title%></span> 
+				<%end%>
+			</div>
+		 </div>
+	<%end%>
+</div>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Supersefer</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+     
+
+        <div  id="content_frame">
+            <div id="content">
+                <div class="top">
+                	<%=image_tag("topLogo.jpg", :style=>"float:left") %>
+                	<%=image_tag("topRightBG.jpg", :style=>"float:right") %>
+                   
+   
+                </div>
+                <ul class="topButtons">
+                    <li class="category">קטגוריות</li>
+                    <li class="homePage">
+                    	<a href=""> דף הבית </a>
+                        </li>
+                    <li class="aboutUs">
+<a href=""> about us</a>
+                       
+                    </li>
+                    <li class="contact">
+                      <a href=""> contact us</a>  
+                        </li>
+                    <li>
+                        <a href=""> shopping cart</a></li>
+                </ul>
+                <div class="clearR" />
+                <table style="width: 100%; direction: rtl" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td valign="top" rowspan="2" width="184px" class="categoryMenu">
+                            <div>
+                            <%=render "main/accordion" %>            
+                                <div class="AdvanceBestSeller">
+                                    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                                    <div class="nextBackBestSeller">
+                                        <img src="/assets/prevBestSeller.jpg" onclick="previousBestSeller()" />
+                                        <img src="/assets/nextBestSeller.jpg" onclick="nextBestSeller()" />
+                                    </div>
+                                </div>
+                                <div class="bestSeller">
+                                    <div class="topBestSeller">
+                                        <img src="/assets/spacer.gif" /></div>
+                                    <div class="middleBestSeller">
+                                        
+                                    </div>
+                                    <div class="bottomBestSeller">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td valign="top" class="ContentPlaceHolder">
+                            <%= yield %>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Developed By:
+                            <a  href="http://www.geshtop.com">geshtop</a>
+                            <a href=""> rss</a>
+                                   
+                  
+                        </td>
+                      
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="Cart">
+<%=render "main/cart" %>
+</div>
+
+
+
+
+</body>
+</html>

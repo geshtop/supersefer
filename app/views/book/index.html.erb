@@ -1,0 +1,4 @@
+
+<%@books.each do |book, index| %>
+<%= render  :partial => "main/bookitem", :locals =>{:dataitem=> book}%>
+<%end%>

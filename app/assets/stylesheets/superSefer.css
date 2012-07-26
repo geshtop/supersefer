@@ -1,0 +1,437 @@
+﻿
+*{margin:0;
+    padding:0}
+body 
+{
+    font-size:14px;
+    font-family:Arial;
+    background-color:#ECE2D6; 
+}
+.top
+{
+    height:136px;
+    width:100%;
+    background-image:url('/assets/topBG.jpg');
+}
+td.ContentPlaceHolder
+{
+    background-image:url('/assets/misgeret_up.jpg');
+    background-repeat:repeat-x;
+    padding: 25px;
+}
+/*div.ContentPlaceHolder2
+{
+    margin-top:35px;
+    background-image:url('/assets/misgeret_side.jpg');
+    background-repeat:repeat-y;
+    background-position:right;
+    padding: 25px;
+}*/
+/*סל קניות*/
+
+div#Cart {
+bottom:0%;
+height:80px;
+position:fixed;
+_position: absolute;
+bottom: 0;
+width:100%;
+background-color:#E7F3F3;
+z-index:100;
+direction:rtl;
+overflow:auto;
+background-image:url('/assets/cartTopBG.jpg');
+background-repeat:repeat-x;
+}
+
+h2.withBG
+{
+    background-image:url('/assets/h2BG.jpg');
+    background-repeat:no-repeat;
+    background-position:top right;
+    font-size:16px;
+    height:23px;
+    padding-right:20px;
+    padding-top:3px;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+.redTriangle
+{
+     margin-right:10px;
+     margin-left:10px;
+     
+}
+
+.topButtons
+{
+    
+  background-color:#354374; 
+  width:100%;
+    height:17px;
+}
+/*לחצנים עליונים */
+
+.topButtons li
+{
+    width:184px;
+    height:17px;
+    float:right;
+    text-align:center;
+    color:White;
+    font-weight:bolder;
+    list-style-type:none;
+}
+.topButtons li a
+{
+    color:White;
+    text-decoration:none;
+}
+.topButtons li.category{ background-color:#388B23; width:202px;}
+.homePage{ background-color:#EC3017;  }
+.aboutUs { background-color:#833366;  }
+.contact{background-color:#56428A; }
+.rss{background-color:#F48F39; width:20px}
+/*סוף לחצנים*/
+/*צד ימיני קטגוריות*/
+
+.txt
+{
+      border:solid 1px #817C78;
+      height:19px;
+}
+.nextPrev
+{
+    text-align:left;
+}
+.categoryMenu
+{
+     width:184px;
+     border-right:solid 18px #88B87A;
+     background-color:#C3DCBE;
+}
+.pageContent
+{
+   
+   
+}
+
+.book {
+	float: right;
+	width: 224px;
+	height: 182px;
+	overflow:hidden;
+	margin: 10px;
+	direction:rtl;
+	
+	
+}
+.bookName
+{
+  width:206px;
+  height:17px;
+  overflow:hidden;
+  background-color:#000000;
+  color:White;
+  background-image:url('/assets/bookTitleBG.jpg');
+  background-repeat:no-repeat;
+  background-position:top left;
+  display:block;
+  padding-right:10px;
+  padding-top:-5px;
+  
+}
+
+
+.imgBook
+{
+    margin-top:10px;
+    width:80px;
+    height:120px;
+    float:right;
+}
+.bookData
+{
+    float:left;
+    width:123px;
+    margin:10px;
+    height:110px;
+    color:Red;
+    font-weight:bolder;
+}
+.bookDescription
+{
+ font-weight:normal;
+ font-size:14px;
+ color:Black;
+}
+.price
+{
+    color:Red;
+}
+.selectbutton
+{
+   margin-top:10px;
+   width:79px;
+   cursor:pointer;
+   cursor:hand;
+
+}
+
+/*עיצוב הספרים שנמצאים בסל הקניות */
+.cartBook
+{
+  width:90px;
+  height:65px;
+  float:right;
+  margin:10px 3px 3px 3px;  
+  
+}
+.CartImg
+{
+    width:29px;
+    float:right;
+    height:37px;
+}
+.bookNameCart
+{
+  width:75px;
+  height:17px;
+  overflow:hidden;
+  background-color:#000000;
+  color:White;
+  background-image:url('/assets/bookTitleBG.jpg');
+  background-repeat:no-repeat;
+  background-position:top left;
+  display:block;
+  padding-right:5px;
+  padding-top:-5px;
+  font-size:9px;
+  line-height:8px;
+  margin-bottom:5px;
+  
+}
+.checkOutFormsField
+{
+    width:30px;
+}
+
+.bottomSpace{
+   height:80px;
+   background-color:#ECE2D6; 
+}
+.cartTotal
+{
+    width:192px;
+     height:65px;
+      float:right;
+      margin:10px 3px 3px 3px; 
+    
+}
+/*חיפוש*/
+.search
+{
+  direction:rtl;
+  text-align:right;
+  padding:20px;
+}
+.searchButtons
+{
+    float:right;
+    margin-left:10px;
+}
+
+/*סוף חיפוש*/
+
+
+.clearL {
+clear:left;
+}
+.clearR {
+clear:right;
+}
+.floatR
+{
+    float:right;
+}
+/*חיפוש*/
+.searchButton
+{
+    background-color:#D1D1D1;
+    padding-right:5px;
+    padding-left:5px;
+     
+}
+.advancesearchButton
+{
+    background-color:#999999;
+    padding-right:5px;
+    padding-left:5px;
+ }
+
+
+/*סוף חיפוש*/
+/*תפריט קטגוריות*/
+/*קטגוריות אקורדיון */
+  .AccordionHeader
+    {
+     color:#2D8C14;
+     cursor:pointer;
+     font-weight:bold;
+     text-align:right
+        
+        
+    }
+     .AccordionHeader:hover
+     {
+     background-color:#ECE2D6;
+     border-top:1px solid #FFFFFF;
+     border-bottom:1px solid #FFFFFF;
+      padding: 3px;
+     }
+     .AccordionHeader 
+     {
+        padding: 3px;
+        border-top:1px solid #E8E8E8;
+       border-bottom:1px solid #E8E8E8;
+     }
+     .myBullet
+     {
+        float:right; margin-top:3px; margin-right:5px;margin-left:5px
+     }
+    .AccordionContent
+    {
+        padding-right:15px;
+        border-color:#F6F6F6 ;
+        border-style:none dashed dashed;
+        border-width:medium 1px 1px;
+        text-align:right;
+        cursor:pointer;
+        cursor:hand;
+               
+    }
+    .AccordionContent span{
+
+        display: block;
+    }
+  
+
+    /*רב מכר עם הרקעים  של התמונה */
+    div.AdvanceBestSeller
+    {
+        background-image:url('/assets/bestSelletBG.jpg');
+        background-repeat:no-repeat;
+        background-position:top left;
+        height:183px;
+        position:relative;
+        text-align:center;
+        padding-top:5px;
+        width:184px;
+    }
+    img.bookSeller
+    {
+        position:absolute;
+        top:46px;
+        left:99px;
+        width:65px;
+        height:92px;
+    }
+    div.bookSellerPrice
+    {
+        width:53px;
+        height:53px;
+        position:absolute;
+        top:42px;
+        left:22px;
+        color:White;
+        font-weight:bold;
+        padding-top:7px;
+        text-align:center;
+    }
+    div.nextBackBestSeller
+    {
+        position:absolute;
+        top:119px;
+        left:8px;
+        
+    }
+     
+     /*רב מכר - מבצעים */
+     .bestSeller
+     {
+        text-align:right;
+        direction:rtl;
+     }
+     .topBestSeller
+     {
+        background-image:url('/assets/roundTopCorner.jpg');
+        background-repeat:no-repeat;
+        background-position:top left;
+        height:20px;
+      
+     }
+     .middleBestSeller
+     {
+        background-color:#fff;
+        border-left:solid 1px #596358;
+        height:150px;
+        overflow:hidden;
+     }
+     .bottomBestSeller
+     {
+        height:26px;
+        background-image:url('/assets/bestSeller.jpg');
+        background-repeat:no-repeat;
+        background-position:bottom left;
+     }
+     /*רב מכר מבצעים ---סוף */
+     
+     /*מוצרים בקופה*/
+     td.headercartTable
+     {
+        text-decoration:underline;
+        font-weight:bold;
+
+     }
+     /*דף מידע פרטי ספר */
+
+     .bigBookTitle
+     {
+        background-image:url('/assets/bigBookTitleBG.jpg');
+        background-repeat:no-repeat;
+        background-position:left top;
+        background-color:#000000;
+        color:White;
+        font-size:28px;
+      
+        
+     }
+     .bigBookTable td
+     {
+        padding-left:30px;
+        padding-bottom:10px;
+     }
+     p.bigBookData
+     {
+     
+     }
+     .sumTotal
+     {
+        font-weight:bolder;
+     }
+     .redButtonBG
+     {
+        margin-top:20px;
+        background-image:url('/assets/redButtonBG.jpg');
+        width:145px;
+        height:23px;
+        
+     }
+     a.redButtonLink 
+     {
+        text-decoration:none;
+        color:Black;
+        cursor:default;
+        
+     }
+     

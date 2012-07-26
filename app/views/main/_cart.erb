@@ -1,0 +1,22 @@
+<div class="cartTotal">
+	<% @basketitem = Basket.where(session_id: @my_session_id) %>
+	<% @total =0%>
+	<%@basketitem.each do |basket| 
+	@total = @total  + (basket.book.price * basket.quantity)
+	end %>
+<a href="#"><%=image_tag("cartGoBasket.jpg", :style => "float:right; border:0") %></a>
+<strong>סך הכל <%=@total%></strong>
+ </div>
+
+
+
+<%@basketitem.each do |basket| %>
+ <div class="cartBook">
+               <strong class="bookNameCart"><%=basket.book.title%></strong>
+               <%=image_tag("noBook.jpg", :class => "CartImg") %>
+                <input size="2" id="Text" value="<%=basket.quantity%>" type="text" class="checkOutFormsField" />
+				<%=image_tag("del_img.jpg", :class => "blImg", :onclick => "removeFromBasket(" + basket.id.to_s + ")") %>
+				<br/>
+				<small><%=basket.book.price%> ש"ח</small>
+            </div>
+<%end%>

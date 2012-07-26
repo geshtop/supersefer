@@ -1,0 +1,18 @@
+
+<%unless dataitem.nil? %>
+
+<div class="book" >
+              <strong class="bookName"><%=dataitem.title%></strong>
+           
+             <%=image_tag("noBook.jpg", :class=>"imgBook") %>
+
+              <div class="bookData">
+              מחיר: <%=dataitem.price%> ש"ח
+              <br /><br /><br />
+              <span class="bookDescription">
+              <%=dataitem.description%>
+              </span> 
+              </div>
+              <%=image_tag("selectbutton.jpg", :class=>"selectbutton", :dataid => dataitem.id) %>
+            </div>
+<%end%>
