@@ -9,9 +9,28 @@ class BasketController < ApplicationController
 
   end
 
-  def sumtotal(basketlist)
-		100
+  def remove
+	@basketid = params[:id].to_i
+	Basket.where(id: @basketid, session_id: @my_session_id).first.delete
+	render :nothing =>   true
+  end
+
+  def update_quantity
+  	@basketid = params[:id].to_i
+  	@quantity= params[:quantity].to_i
+  	basket=Basket.where(id: @basketid, session_id: @my_session_id).first
+  	if(@quantity<1)
+  		basket.delete
+  	else
+
+		unless basket.nil?
+			basket.quantity = @quantity
+			basket.save
+		end
+		
 	end
+	render :nothing =>   true
+  end
 
 	def add_book(bookid)
 		@existbook = get_by_book(bookid)

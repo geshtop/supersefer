@@ -13,8 +13,12 @@
 <%@basketitem.each do |basket| %>
  <div class="cartBook">
                <strong class="bookNameCart"><%=basket.book.title%></strong>
-               <%=image_tag("noBook.jpg", :class => "CartImg") %>
-                <input size="2" id="Text" value="<%=basket.quantity%>" type="text" class="checkOutFormsField" />
+               <% unless basket.book.image_url.nil? %>
+             <%=image_tag(basket.book.image_url.to_s, :class=>"CartImg") %>
+             <%else%>
+             <%=image_tag("noBook.jpg", :class=>"CartImg") %>
+             <%end%>
+                <input size="2" onchange="updateQuantity(<%=basket.id.to_s %>, this.value)" value="<%=basket.quantity%>" type="text" class="checkOutFormsField" />
 				<%=image_tag("del_img.jpg", :class => "blImg", :onclick => "removeFromBasket(" + basket.id.to_s + ")") %>
 				<br/>
 				<small><%=basket.book.price%> ש"ח</small>

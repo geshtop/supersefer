@@ -10,11 +10,20 @@ end
 
  def sessionid
   	result = request.session_options[:id]
-  	if request.cookies[:session_id].nil?
-		cookies[:session_id] = { :value => result, :expires =>  1.week.from_now}
-	else
-		result = cookies[:session_id]
-  	end
+  	 if cookies[:session_id].nil?
+		  cookies[:session_id] = { :value => result, :expires =>  1.week.from_now}
+	   else
+		  result = cookies[:session_id]
+  	 end
 	result
   end
 end
+
+
+def authenticate_active_admin_user!
+    authenticate_user! 
+    unless current_user.is_admin?
+      flash[:alert] = "Unauthorized Access!"
+      redirect_to root_path 
+    end
+  end

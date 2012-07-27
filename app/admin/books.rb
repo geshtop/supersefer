@@ -5,9 +5,7 @@ ActiveAdmin.register Book do
 	    f.input :title
 	    f.input :body
 	   	f.input :description
-	   f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.to_s.url(:medium))
-
-	    f.input :thumbnail, :as => :file   
+	    f.input :image 
 	    f.input :status
 	    f.input :price
 	    f.input :priority
@@ -15,6 +13,17 @@ ActiveAdmin.register Book do
 	    f.input :language
   end
   f.buttons
+ end
+ index do
+ 	column :title
+ 	column :subcategory
+ 	column :price
+ 	column :image do |book|
+ 		
+ 		image_tag	book.image_url.to_s, :style =>"width:50px"
+ 		
+ 	end
+ 	default_actions
  end
 
 end

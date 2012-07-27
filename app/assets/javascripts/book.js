@@ -32,3 +32,23 @@
 				});
 
 	}
+
+	function removeFromBasket(basketid){
+				$.ajax({
+					url: "/basket/remove/"+ basketid,
+					success: function(response){
+					ApplayShoppingCart();
+					 }
+				});
+
+	}
+	function updateQuantity(basketid, quanityid){
+				$.ajax({
+					url: "/basket/update_quantity/?id="+ basketid +"&quantity=" + quanityid,
+					success: function(response){
+					ApplayShoppingCart();
+					 }
+				});
+
+	}
+	

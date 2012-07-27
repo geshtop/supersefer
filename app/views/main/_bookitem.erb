@@ -3,9 +3,11 @@
 
 <div class="book" >
               <strong class="bookName"><%=dataitem.title%></strong>
-           
+           <% unless dataitem.image_url.nil? %>
+             <%=image_tag(dataitem.image_url.to_s, :class=>"imgBook") %>
+             <%else%>
              <%=image_tag("noBook.jpg", :class=>"imgBook") %>
-
+             <%end%>
               <div class="bookData">
               מחיר: <%=dataitem.price%> ש"ח
               <br /><br /><br />
