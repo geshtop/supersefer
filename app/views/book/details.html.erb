@@ -1,0 +1,68 @@
+
+<%unless @book.nil?%>
+
+<div  style="direction: rtl; font-size:1.2em">
+            <div style="float:right; width:80px; text-align:center; margin-left:10px;">
+
+            	<% unless @book.image_url.nil? %>
+             <%=image_tag(@book.image_url.to_s, :width=>"80px", :alt => @book.title) %>
+             <%else%>
+             <%=image_tag("noBook.jpg", :width=>"80px", :alt => @book.title) %>
+             <%end%>
+              
+                     
+            </div> 
+              
+                    
+                <div style="margin-right: 30px" class="bigBookDetail">
+                    <strong class="bigBookTitle">
+                    	<%=@book.title%>
+                       &nbsp;&nbsp;&nbsp;
+                    </strong>
+                    <table class="bigBookTable" cellpadding="20">
+                    	<%unless(@book.author.nil?)%>
+                        <tr>
+                            <td>
+                                שם המחבר</td>
+                            <td>
+                                
+              <%=@book.author.title%> 
+              
+                            </td>
+                        </tr>
+                        <%end%>
+                        <%if(@book.publisher.to_s.length > 0)%>
+                        <tr>
+                            <td>
+                                הוצאה לאור</td>
+                            <td>
+                                <%=@book.publisher%>
+                            </td>
+                        </tr>
+                        <%end%>
+                        <tr>
+                            <td>
+                                מחיר</td>
+                            <td>
+                                <%=@book.price%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                סיווג</td>
+                            <td>
+                                <%=@book.subcategory.category.title%>
+                                -
+                                <%=@book.subcategory.title%>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="bigBookData">
+                         <%=@book.body%>   </div>
+                         <%=image_tag ("selectbutton.jpg")%>
+                     
+                      
+                    
+                </div>
+            </div>
+            <%end%>

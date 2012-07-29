@@ -12,7 +12,18 @@
         <div  id="content_frame">
             <div id="content">
                 <div class="top">
-                	<%=image_tag("topLogo.jpg", :style=>"float:left") %>
+<div id="user_nav">
+    <% if user_signed_in? %>
+        <%= current_user.email %>
+        <%= link_to "יציאה", destroy_user_session_path, :method => :delete %>
+        <%= link_to('פרופיל', edit_user_registration_path, html_options = {:title => "פרופיל", :class => "button grey"}) %>
+    <% else %>
+        <%= link_to 'הרשמה', new_user_registration_path %> או <%= link_to 'כניסה', new_user_session_path %>
+    <% end %>
+</div>
+
+
+                	<%=link_to image_tag("topLogo.jpg", :style=>"float:left") , :controller => "/book", :action => "index" %>
                 	<%=image_tag("topRightBG.jpg", :style=>"float:right") %>
                    
    
@@ -20,7 +31,9 @@
                 <ul class="topButtons">
                     <li class="category">קטגוריות</li>
                     <li class="homePage">
-                    	<a href=""> דף הבית </a>
+                    	
+                    <%=link_to "דף הבית", :controller => "/book", :action => "index"%>
+
                         </li>
                     <li class="aboutUs">
 <a href=""> about us</a>
@@ -30,14 +43,16 @@
                       <a href=""> contact us</a>  
                         </li>
                     <li>
-                        <a href=""> shopping cart</a></li>
+                   <%=link_to "לקופה", :controller => "/cart", :action => "index"%>
+
+                    </li>
                 </ul>
                 <div class="clearR" />
                 <table style="width: 100%; direction: rtl" cellpadding="0" cellspacing="0">
                     <tr>
                         <td valign="top" rowspan="2" width="184px" class="categoryMenu">
                             <div >
-                            <%=render "main/accordion" %>            
+                            <%=render "main/partial/accordion" %>            
                                <!-- <div class="AdvanceBestSeller">
                                     <asp:Literal ID="Literal1" runat="server"></asp:Literal>
                                     <div class="nextBackBestSeller">
@@ -79,7 +94,7 @@
             </div>
         </div>
         <div id="Cart">
-<%=render "main/cart" %>
+<%=render "main/partial/cart" %>
 </div>
 
 

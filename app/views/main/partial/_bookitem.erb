@@ -1,0 +1,23 @@
+
+<%unless dataitem.nil? %>
+
+<div class="book" >
+              <strong class="bookName"><%=link_to dataitem.title , :controller=>"/book", :action => "details", :id=> dataitem.id%></strong>
+           <% unless dataitem.image_url.nil? %>
+             <%=link_to  image_tag(dataitem.image_url.to_s, :class=>"imgBook"), :controller=>"/book", :action => "details", :id=> dataitem.id%>
+             <%else%>
+             <%=link_to  image_tag("noBook.jpg", :class=>"imgBook"), :controller=>"/book", :action => "details", :id=> dataitem.id%>
+             <%end%>
+              <div  class="bookData">
+              מחיר: <strong><%=dataitem.price%> ש"ח </strong><br/>
+              <%unless(dataitem.author.nil?)%>
+              מחבר: <strong><%=dataitem.author.title%> </strong><br/>
+              <%end%>
+              <div class="bookDescription">
+              <%=dataitem.description%>
+              </span> 
+              </div>
+            </div>
+              <%=image_tag("selectbutton.jpg", :class=>"selectbutton", :dataid => dataitem.id) %>
+            </div>
+<%end%>

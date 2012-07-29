@@ -4,7 +4,8 @@
 		<div class="AccordionContent">
 			<div class="menuList">
 			<%cat.subcategories.each do |sub| %>
-				<span><%=sub.title%></span> 
+			 
+				<%=link_to sub.title , {:controller => "/book", :action => "index", :id => sub.id}, :class => "sub_category_link", :dataid => sub.id%>
 				<%end%>
 			</div>
 		 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727051234) do
+ActiveRecord::Schema.define(:version => 20120727110711) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20120727051234) do
 
   create_table "authors", :force => true do |t|
     t.string   "title"
-    t.integer  "status"
+    t.integer  "status_id"
     t.integer  "language_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(:version => 20120727051234) do
     t.string   "thumbnail"
     t.string   "image"
     t.decimal  "price",          :precision => 10, :scale => 0
-    t.integer  "status"
+    t.integer  "status_id"
     t.integer  "language_id"
     t.datetime "created_at",                                    :null => false
     t.datetime "updated_at",                                    :null => false
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(:version => 20120727051234) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
-    t.integer  "status"
+    t.integer  "status_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "language_id"
@@ -89,7 +89,13 @@ ActiveRecord::Schema.define(:version => 20120727051234) do
 
   create_table "languages", :force => true do |t|
     t.string   "title"
-    t.integer  "status"
+    t.integer  "status_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -100,7 +106,7 @@ ActiveRecord::Schema.define(:version => 20120727051234) do
     t.integer  "language_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.integer  "status"
+    t.integer  "status_id"
   end
 
   create_table "users", :force => true do |t|
@@ -119,6 +125,12 @@ ActiveRecord::Schema.define(:version => 20120727051234) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.boolean  "is_admin"
+    t.string   "phone"
+    t.string   "idnum"
+    t.string   "address"
+    t.string   "city"
+    t.string   "country"
+    t.string   "zipcode"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

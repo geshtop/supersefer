@@ -4,11 +4,15 @@
 	<%@basketitem.each do |basket| 
 	@total = @total  + (basket.book.price * basket.quantity)
 	end %>
-<a href="#"><%=image_tag("cartGoBasket.jpg", :style => "float:right; border:0") %></a>
-<strong>סך הכל <%=@total%></strong>
+
+<%=link_to image_tag("cartGoBasket.jpg", :style => "float:right; border:0"), :controller => "/cart", :action => "index"%>
+<%if (@total > 0) %>
+<strong>סך הכל <%=@total%> ש"ח</strong>
+
+ <%else%>
+ <strong>סל הקניות שלך ריק</strong>
+<%end%>
  </div>
-
-
 
 <%@basketitem.each do |basket| %>
  <div class="cartBook">

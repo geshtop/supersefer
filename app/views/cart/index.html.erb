@@ -1,0 +1,30 @@
+<div >
+      
+        <%=image_tag("kupa.jpg") %>
+        <h2 class="withBG">
+            פרטי הזמנה <%=image_tag("redTriangle.jpg" , :class => "redTriangle") %>   
+        </h2>
+        <div id="cartTable">
+            <%= render "main/partial/basketcart" %>
+        </div>
+        <h2 class="withBG">
+            פרטי משתמש
+		<%=image_tag("redTriangle.jpg", :class => "redTriangle") %>
+        </h2>
+        
+        <h2 class="withBG">
+            פרטי משלוח<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
+        </h2>
+        
+        <h2 class="withBG">
+            אפשרויות משלוח<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
+        </h2>
+        
+         <h2 class="withBG">
+           הערות נוספות<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
+        </h2>
+ <!--
+        <asp:LinkButton CssClass="redButtonLink" ID="btnsubmit" runat="server" OnClick="btnsubmit_Click">
+        <div class="redButtonBG">&nbsp;&nbsp;בצע הזמנה</div>
+        </asp:LinkButton>-->
+</div>

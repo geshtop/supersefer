@@ -37,7 +37,7 @@ class BasketController < ApplicationController
 		unless @existbook.nil?
 			add_one_item(@existbook)
 		else
-			@book = Book.where(id: bookid,status: 1).first
+			@book = Book.where(id: bookid,status_id: 1).first
 			#TODO why i can see that enter to the basket not existing books???
 			unless @book.nil?
 				Basket.create(session_id: @my_session_id, book_id: bookid, quantity: 1)
@@ -55,4 +55,7 @@ class BasketController < ApplicationController
 		item.quantity = item.quantity+1
 		item.save()
 	end
+
+
+
 end

@@ -1,4 +1,5 @@
-
+<div id="books_wrapper">
 <%@books.each do |book, index| %>
-<%= render  :partial => "main/bookitem", :locals =>{:dataitem=> book}%>
+<%= render  :partial => "main/partial/bookitem", :locals =>{:dataitem=> book}%>
 <%end%>
+</div>

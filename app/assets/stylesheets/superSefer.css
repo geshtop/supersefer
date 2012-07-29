@@ -12,7 +12,13 @@ body
     height:136px;
     width:100%;
     background-image:url('/assets/topBG.jpg');
+    postion:relative;
 }
+.top #user_nav{
+    position:absolute;
+    top:10px; right:220px;font-size:11px; dirction:rtl; text-align:right;
+}
+.top #user_nav a{color:#000; }
 td.ContentPlaceHolder
 {
     background-image:url('/assets/misgeret_up.jpg');
@@ -145,6 +151,10 @@ h2.withBG
   padding-top:-5px;
   
 }
+.bookName a{
+
+    color: #fff; text-decoration:none;
+}
 
 
 .imgBook
@@ -159,14 +169,14 @@ h2.withBG
     float:left;
     width:123px;
     margin:10px;
-    height:110px;
+    height:150px;
     color:Red;
-    font-weight:bolder;
+    overflow:hidden;
 }
 .bookDescription
 {
  font-weight:normal;
- font-size:14px;
+ font-size:12px;
  color:Black;
 }
 .price
@@ -314,10 +324,19 @@ clear:right;
         cursor:hand;
                
     }
-    .AccordionContent span{
+    .AccordionContent a{
 
         display: block;
+        margin-top:3px;
+        margin-bottom:3px;
+        color:#000;
+        text-decoration:none;
+
+
     }
+      .AccordionContent a:hover{
+color:#2D8C14;
+      }
   
 
     /*רב מכר עם הרקעים  של התמונה */

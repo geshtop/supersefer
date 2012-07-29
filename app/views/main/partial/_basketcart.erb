@@ -1,0 +1,48 @@
+<% @basketitem = Basket.where(session_id: @my_session_id) %>
+<% @total =0%>
+	<%@basketitem.each do |basket| 
+	@total = @total  + (basket.book.price * basket.quantity)
+	end %>
+<table class="cartTableBasket" cellspacing="10px">
+<tbody>
+	<tr>
+		<td class="headercartTable"> תמונה</td>
+		<td class="headercartTable"> ספר</td>
+		<td class="headercartTable"> כמות</td>
+		<td class="headercartTable"> מחיר</td>
+		<td class="headercartTable"> מחיקה</td>
+	</tr>
+<%@basketitem.each do |basket| %>
+<tr>
+	<td><% unless basket.book.image_url.nil? %>
+             <%=image_tag(basket.book.image_url.to_s, :class=>"CartImg") %>
+             <%else%>
+             <%=image_tag("noBook.jpg", :class=>"CartImg") %>
+             <%end%></td>
+             <td> 
+<span class="bodyTextBlack"><%=basket.book.title%></span>
+             </td>
+               <td>
+				<input size="2" onchange="updateQuantity(<%=basket.id.to_s %>, this.value)" value="<%=basket.quantity%>" type="text" class="checkOutFormsField" />
+               </td>
+               <td><small>
+<%=basket.book.price%> ש"ח</small>
+               </td>
+               <td>
+<%=image_tag("basketDelete.jpg", :class => "blImg", :onclick => "removeFromBasket(" + basket.id.to_s + ")") %>
+               </td>
+                
+				
+				<br/>
+				<small></small>
+</tr>
+<%end%>
+
+</tbody>
+</table>
+
+
+
+
+
+

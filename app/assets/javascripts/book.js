@@ -2,7 +2,9 @@
 
 	$(function() {
 		
-		ApplayBasketEvents()
+		ApplayBasketEvents();
+			
+
 	});
 
 
@@ -31,6 +33,17 @@
 					 }
 				});
 
+		if($("#cartTable").length >0)
+		{
+					$.ajax({
+					url: "/book/basketcart/",
+					context: $('#cartTable'),
+					success: function(response){
+					$(this).html(response)
+					 }
+				});
+		}	
+
 	}
 
 	function removeFromBasket(basketid){
@@ -51,4 +64,20 @@
 				});
 
 	}
+
+	function selectCategory(subcategoryid){
+		
+
+
+				$.ajax({
+					url: "/book/index/"+ subcategoryid,
+					context: $('#books_wrapper'),
+					success: function(response){
+					$(this).html(response)
+					 }
+				});
+		}
+	
+
+	
 	

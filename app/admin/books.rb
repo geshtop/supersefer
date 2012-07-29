@@ -6,7 +6,7 @@ ActiveAdmin.register Book do
 	    f.input :body
 	   	f.input :description
 	    f.input :image 
-	    f.input :status
+	    f.input :status_id
 	    f.input :price
 	    f.input :priority
 	    f.input :subcategory

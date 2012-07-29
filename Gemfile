@@ -28,6 +28,7 @@ group :development, :test	do
 	gem "factory_girl_rails"
 end
 gem 'mysql'
+gem "ruby-mysql"
 gem 'jquery-rails'
 gem 'devise'
 
