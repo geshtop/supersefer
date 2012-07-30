@@ -6,15 +6,21 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'mysql'
+gem "ruby-mysql" #fixed the hebrew in ruby
+gem 'jquery-rails'
+gem 'devise' #user member ship
+gem 'activeadmin' #the rails admin module GREAT!!!
+gem 'carrierwave' #thie image upload option  paperclip
+gem 'client_side_validations'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'activeadmin'
-  gem 'carrierwave'
+  
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
@@ -27,10 +33,7 @@ group :development, :test	do
 	gem "rspec-rails"
 	gem "factory_girl_rails"
 end
-gem 'mysql'
-gem "ruby-mysql"
-gem 'jquery-rails'
-gem 'devise'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

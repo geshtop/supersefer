@@ -1,4 +1,8 @@
 Supersefer::Application.routes.draw do
+  get "about/index"
+
+  get "contact/index"
+
   get "cart/index"
 
   ActiveAdmin.routes(self)
