@@ -1,4 +1,6 @@
 Supersefer::Application.routes.draw do
+  mount Rich::Engine => '/rich', :as => 'rich'
+
   get "about/index"
 
   get "contact/index"

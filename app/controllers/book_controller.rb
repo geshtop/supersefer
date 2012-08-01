@@ -2,16 +2,18 @@ class BookController < ApplicationController
   def index
 
   
-  		@sub = params[:id].to_i
-      
-  		@books = nil
-  		if @sub > 0
+  		sub = params[:id].to_i
 
-  		@books=Book.where(subcategory_id: @sub, status_id: 1).order("priority Desc, title")
-  	else
-  		@books=Book.where(status_id: 1).order("priority DESC, title")
-  	end
-	  #render :layout => false
+      @subcategory = nil
+  		@books = nil
+  		if sub > 0
+        @subcategory = Subcategory.where(id: sub, status_id:1).first
+      
+      		@books=Book.where(subcategory_id: sub, status_id: 1).order("priority Desc, title")
+      	else
+      		@books=Book.where(status_id: 1).order("priority DESC, title")
+      	end
+    	  #render :layout => false
   end
 
   def details

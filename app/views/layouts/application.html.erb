@@ -4,6 +4,7 @@
   <title>Supersefer</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -79,35 +80,11 @@
                         </td>
                         <td valign="top" class="ContentPlaceHolder">
                              <div  class="content_wrapper">
-                                 <h2 style="direction:ltr; text-align:left"> TODO: </h2>
-                                 <ul style="direction:ltr; text-align:left"><li>Active admin rich text box </li>
-                                    <li>Finish detail page using the rtf field</li>
-                                    <li> the option to resize the images by carrierwave or the second option, and add lightbod for see the large image </li>
-                                    <li> Client side validation </li>
-                                    <li> Cart page (add shipping form, add user details (not editable) shipping price etc')</li>
-                                    <li> create order module and applay the Ordr process by sending a mail to admin 
-                                        (in this point this application not using the option to order by credit card) </li>
-                                    <li> active admin create module for orders</li>
-                                    <li> other site pages (about us, contact us, order complete etc')</li>
-                                    <li> add autocomplete (by product by author to site)</li>
-                                    <li> Category page add category title, and the no-book if not exists books </li>     
-                                    <li> add seed option </li>
-                                    <li> add best seller </li>
-                                    <li> add news marquee</li>
-                                    <li> upload site to live </li>
-                                    
-                                </ul>
-                                <h2 style="direction:ltr; text-align:left"> TODO: second step </h2>
-                                <ul style="direction:ltr; text-align:left">
-
-                                <li>applay paypal option</li>
-                                <li>think / applay change  the site to multiple languages </li>
-                                <li> Category page when the user exist at home page get the products by ajax </li>
-                            </ul>
-
+                                
+                              
 
                             <%= yield %>
-<div style="clear:both"> </div>
+                    <div style="clear:both"> </div>
                         </div>
 
                         </td>
