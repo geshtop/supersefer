@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801020215) do
+ActiveRecord::Schema.define(:version => 20120803100327) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -64,19 +64,19 @@ ActiveRecord::Schema.define(:version => 20120801020215) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
-    t.string   "body"
+    t.text     "body"
     t.string   "publisher"
     t.integer  "subcategory_id"
-    t.string   "thumbnail"
     t.string   "image"
-    t.decimal  "price",          :precision => 10, :scale => 0
+    t.decimal  "price",          :precision => 8, :scale => 2
     t.integer  "status_id"
     t.integer  "language_id"
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.integer  "author_id"
     t.integer  "priority"
     t.string   "description"
+    t.decimal  "weight",         :precision => 8, :scale => 2
   end
 
   create_table "categories", :force => true do |t|
@@ -94,6 +94,42 @@ ActiveRecord::Schema.define(:version => 20120801020215) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "orders", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "user_email"
+    t.string   "user_first_name"
+    t.string   "user_last_name"
+    t.string   "user_phone"
+    t.string   "user_idnum"
+    t.string   "user_address"
+    t.string   "user_city"
+    t.string   "user_country"
+    t.string   "user_zipcode"
+    t.decimal  "products_price",       :precision => 8, :scale => 2
+    t.integer  "products_count"
+    t.decimal  "total_weight",         :precision => 8, :scale => 2
+    t.integer  "shipping_id"
+    t.integer  "shippingoption_id"
+    t.string   "shipping_title"
+    t.string   "shippingoption_title"
+    t.decimal  "shipping_price",       :precision => 8, :scale => 2
+    t.decimal  "grandtotal",           :precision => 8, :scale => 2
+    t.boolean  "has_shipping_address"
+    t.string   "shipping_first_name"
+    t.string   "shipping_last_name"
+    t.string   "shipping_phone"
+    t.string   "shipping_address"
+    t.string   "shipping_city"
+    t.string   "shipping_country"
+    t.string   "shipping_zipcode"
+    t.integer  "status_id"
+    t.integer  "language_id"
+    t.boolean  "complete"
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+    t.text     "notes"
+  end
+
   create_table "rich_rich_files", :force => true do |t|
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
@@ -105,6 +141,26 @@ ActiveRecord::Schema.define(:version => 20120801020215) do
     t.integer  "owner_id"
     t.text     "uri_cache"
     t.string   "simplified_type",        :default => "file"
+  end
+
+  create_table "shippingoptions", :force => true do |t|
+    t.string   "title"
+    t.integer  "shipping_id"
+    t.decimal  "price",       :precision => 8, :scale => 2
+    t.decimal  "from_weight", :precision => 8, :scale => 2
+    t.decimal  "to_weight",   :precision => 8, :scale => 2
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.integer  "status_id"
+    t.integer  "language_id"
+  end
+
+  create_table "shippings", :force => true do |t|
+    t.string   "title"
+    t.integer  "status_id"
+    t.integer  "language_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "statuses", :force => true do |t|

@@ -66,6 +66,10 @@ h2.withBG
     margin-top:20px;
     margin-bottom:10px;
 }
+.blImg{
+
+    cursor:pointer;
+}
 .redTriangle
 {
      margin-right:10px;
@@ -156,22 +160,27 @@ h2.withBG
     color: #fff; text-decoration:none;
 }
 
-
+.right_side{
+    height:168px; float:right; width:80px;
+}
 .imgBook
 {
     margin-top:10px;
     width:80px;
     height:120px;
-    float:right;
 }
 .bookData
 {
     float:left;
     width:123px;
     margin:10px;
-    height:150px;
+    height:168px;
     color:Red;
     overflow:hidden;
+    backgrond:green;
+}
+.bookData .book_top{
+    height:140px; overflow:hidden;
 }
 .bookDescription
 {
@@ -189,6 +198,10 @@ h2.withBG
    width:79px;
    cursor:pointer;
    cursor:hand;
+
+}
+.book_weight{
+font-size:10px; text-align:left;
 
 }
 
@@ -434,9 +447,9 @@ color:#2D8C14;
         padding-left:30px;
         padding-bottom:10px;
      }
-     p.bigBookData
+     .bigBookData
      {
-     
+        width:708px;
      }
      .sumTotal
      {
@@ -458,3 +471,10 @@ color:#2D8C14;
         
      }
      
+     .cart_page{}
+     .cart_page .des {padding-right:5px; clear:both;}
+     .cart_page .des strong{float:right; padding-left:7px;}
+     .cart_page .des span{float:right;}
+     .cart_page .edit_link{ color:#EC3017; text-decoration:none; border-bottom:dotted 1px;}
+     .cart_page #ShippingData td{height:28px;}
+     .cart_page .area{width:323px; height:80px;}

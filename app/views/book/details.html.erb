@@ -4,7 +4,7 @@
 <div  style="direction: rtl; font-size:1.2em">
             <div style="float:right; width:80px; text-align:center; margin-left:10px;">
 
-            	<% unless @book.image.nil? %>
+             <% unless @book.image.nil? %>
              <%=image_tag(@book.image.to_s, :width=>"80px", :alt => @book.title) %>
              <%else%>
              <%=image_tag("noBook.jpg", :width=>"80px", :alt => @book.title) %>
@@ -44,7 +44,7 @@
                             <td>
                                 מחיר</td>
                             <td>
-                                <%=@book.price%>
+                                <%=@book.price%> ש"ח
                             </td>
                         </tr>
                         <tr>
@@ -56,10 +56,19 @@
                                 <%=@book.subcategory.title%>
                             </td>
                         </tr>
+                         <tr>
+                            <td>
+                                 משקל ליחידה</td>
+                            <td>
+                                <%=@book.weight%>
+                                
+                            </td>
+                        </tr>
                     </table>
                     <div class="bigBookData">
-                         <%=@book.body.html_safe%>   </div>
-                         <%=image_tag ("selectbutton.jpg")%>
+                         <%=@book.body.to_s.html_safe%>   </div>
+                         <br /> <br />
+                          <%=image_tag("selectbutton.jpg", :class=>"selectbutton", :dataid => @book.id) %>
                      
                       
                     

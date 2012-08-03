@@ -1,4 +1,4 @@
-<div >
+<div class="cart_page" >
       
         <%=image_tag("kupa.jpg") %>
         <h2 class="withBG">
@@ -11,11 +11,32 @@
             פרטי משתמש
 		<%=image_tag("redTriangle.jpg", :class => "redTriangle") %>
         </h2>
-        
+        <div class="des"> <strong> שם משתמש:</strong>
+        <span> <%= current_user.first_name %> <%= current_user.last_name %></span>
+        </div>
+        <div class="des"> <strong> דוא"ל: </strong>
+        <span> <%= current_user.email %> </span>
+        </div>
+        <div class="des"> <strong> טלפון: </strong>
+        <span> <%= current_user.phone %></span>
+        </div>
+         <div class="des"> <strong> תעודת זהות: </strong>
+        <span> <%= current_user.idnum %></span>
+        </div> 
+        <div class="des"> <strong> כתובת </strong>
+        <span> <%= current_user.address %><br />
+            <%= current_user.city %> <%= current_user.zipcode %><br />
+            <%= current_user.country %>
+
+        </span>
+        </div>
+        <div class="des">
+             <%= link_to('לעריכת פרטים', edit_user_registration_path, html_options = {:title => "עריכת פרטים", :class => "edit_link"}) %>
+         </div>      
         <h2 class="withBG">
             פרטי משלוח<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
         </h2>
-        
+         <%=render "/main/partial/shippingform" %>
         <h2 class="withBG">
             אפשרויות משלוח<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
         </h2>
@@ -23,6 +44,7 @@
          <h2 class="withBG">
            הערות נוספות<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
         </h2>
+        <%= text_area_tag "notes", nil, :class=>"area"%>
  <!--
         <asp:LinkButton CssClass="redButtonLink" ID="btnsubmit" runat="server" OnClick="btnsubmit_Click">
         <div class="redButtonBG">&nbsp;&nbsp;בצע הזמנה</div>

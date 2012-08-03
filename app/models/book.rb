@@ -3,9 +3,10 @@ class Book < ActiveRecord::Base
 	belongs_to :subcategory
 	belongs_to :author
 	belongs_to :status	
-	validates_presence_of :title, :status_id, :language_id, :subcategory_id, :price
-	attr_accessible :title, :body, :publishere, :status_id, :language_id, :subcategory_id, :price, :image, :author_id, :priority, :description #If exists
+	validates_presence_of :title, :status_id, :language_id, :subcategory_id, :price, :weight
+	attr_accessible :title, :body, :publisher, :status_id, :language_id, :weight,  :subcategory_id, :price, :image, :author_id, :priority, :description #If exists
 	##mount_uploader :image, ImageUploader
 
-
+	
+                           
 end
