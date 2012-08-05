@@ -1,8 +1,12 @@
 <% @basketitem = Basket.where(session_id: @my_session_id) %>
 <% @total =0%>
+<% @total_weight= 0 %>
 	<%@basketitem.each do |basket| 
 	@total = @total  + (basket.book.price * basket.quantity)
+	@total_weight +=basket.book.weight * basket.quantity
 	end %>
+	<input type="hidden" id="total_weight" value="<%=@total_weight%>" />
+	<input type="hidden" id="grand_total" value="<%=@total%>" />	
 <table class="cartTableBasket" cellspacing="10px">
 <tbody>
 	<tr>
@@ -26,17 +30,26 @@
 				<input size="2" onchange="updateQuantity(<%=basket.id.to_s %>, this.value)" value="<%=basket.quantity%>" type="text" class="checkOutFormsField" />
                </td>
                <td><small>
-<%=basket.book.price%> ש"ח</small>
+<%=basket.book.price%> ליחידה</small> <br />
+<%=basket.book.price * basket.quantity%> ש"ח
                </td>
                <td>
 <%=image_tag("basketDelete.jpg", :class => "blImg", :onclick => "removeFromBasket(" + basket.id.to_s + ")") %>
                </td>
-                
-				
-				<br/>
-				<small></small>
 </tr>
 <%end%>
+<tr class="total_tr">
+<td> </td>
+<td> </td>
+<td>סה"כ </td>
+<td><%=@total%> </td>
+</tr>
+<tr class="weight_tr">
+<td> </td>
+<td> </td>
+<td>סך משקל </td>
+<td><%=@total_weight%> </td>
+</tr>
 
 </tbody>
 </table>

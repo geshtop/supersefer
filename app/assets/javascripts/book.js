@@ -3,7 +3,10 @@
 	$(function() {
 		
 		ApplayBasketEvents();
-			
+		SelectShipping();
+		$(".rb").change(function(){
+			SelectShipping();
+		});
 
 	});
 
@@ -40,6 +43,7 @@
 					context: $('#cartTable'),
 					success: function(response){
 					$(this).html(response)
+						SelectShipping()
 					 }
 				});
 		}	
@@ -77,7 +81,41 @@
 					 }
 				});
 		}
-	
+	function SelectShipping(){
+		if($("#total_weight").length > 0){
+		var totalweight = $("#total_weight").val() * 1;
+		var totalproducts = $("#grand_total").val()*1;		
+		var shipping_wrapper = $(".shipping_wrapper");
+		var trcoll = $(".ship_tr");
+		var currentshipping = 0;
+		trcoll.removeClass("current");
+		shipping_wrapper.each(function(index, item){
+			var rb = $(".rb", item);
+			var ischecked = rb.is(":checked");
+			if(ischecked){
+				$(item).addClass("selected");
+				var trs = $(".ship_tr", item);
+				trs.each(function(i,it){
+					if(totalweight>= $(it).attr("data-from") && totalweight<= $(it).attr("data-to"))
+					{
+
+						$(it).addClass("current");
+						currentshipping =$(it).attr("data-price") * 1;
+					}
+				});
+
+			}else{
+
+				$(item).removeClass("selected");
+			}
+			$("#total_wrapper").text(totalproducts);
+			$("#shipping_wrapper").text(currentshipping);
+			$("#grand_total_wrapper").text(currentshipping + totalproducts);
+		
+
+		});
+	}
+	}
 
 	
 	

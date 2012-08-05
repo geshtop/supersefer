@@ -1,0 +1,19 @@
+<%
+@shippdatasource = Shipping.where(status_id:1)
+index = 0
+%>
+<%@shippdatasource.each do |ship| %>
+<div class="shipping_wrapper">
+<%=radio_button_tag "shipping_id" , ship.id,  ship.is_default?, {:class =>"rb"}%>	<%=ship.title%>
+<div>
+<table class="shipping-table">
+<%ship.shippingoptions.each do |option| %>
+<tr class="ship_tr" data-from="<%=option.from_weight %>" data-to="<%= option.to_weight %>" data-price="<%=option.price%>">
+<td class="title"> <%=option.title%></td>
+<td > <%=option.price %> </td>
+</tr>
+<%end%>
+</table>
+</div>
+</div>
+<%end%>

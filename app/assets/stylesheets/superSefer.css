@@ -21,7 +21,7 @@ body
 .top #user_nav a{color:#000; }
 td.ContentPlaceHolder
 {
-    background-image:url('/assets/misgeret_up.jpg');
+    Xbackground-image:url('/assets/misgeret_up.jpg');
     background-repeat:repeat-x;
     padding: 25px;
 }
@@ -478,3 +478,9 @@ color:#2D8C14;
      .cart_page .edit_link{ color:#EC3017; text-decoration:none; border-bottom:dotted 1px;}
      .cart_page #ShippingData td{height:28px;}
      .cart_page .area{width:323px; height:80px;}
+     .cart_page .shipping-table td{padding-right:15px;}
+     .cart_page .shipping-table .current td{background:red; Xbackground:url('/assets/selected_right.jpg') right center no-repeat}
+     .cart_page .total_tr td{border-top:solid 1px #000; font-size:14px; font-weight:600;}
+     .cart_page .weight_tr td{font-size:10px;}
+     .cart_page .total_table td{padding-left:20px; }
+     .cart_page .total_table td.td_total{font-weight:600;}

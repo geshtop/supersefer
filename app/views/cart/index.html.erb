@@ -1,5 +1,5 @@
 <div class="cart_page" >
-      
+      <%=form_tag ("/order") do%>
         <%=image_tag("kupa.jpg") %>
         <h2 class="withBG">
             פרטי הזמנה <%=image_tag("redTriangle.jpg" , :class => "redTriangle") %>   
@@ -7,6 +7,7 @@
         <div id="cartTable">
             <%= render "main/partial/basketcart" %>
         </div>
+        
         <h2 class="withBG">
             פרטי משתמש
 		<%=image_tag("redTriangle.jpg", :class => "redTriangle") %>
@@ -40,13 +41,34 @@
         <h2 class="withBG">
             אפשרויות משלוח<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
         </h2>
+        <%=render "/main/partial/shipping" %>
         
          <h2 class="withBG">
            הערות נוספות<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
         </h2>
         <%= text_area_tag "notes", nil, :class=>"area"%>
- <!--
-        <asp:LinkButton CssClass="redButtonLink" ID="btnsubmit" runat="server" OnClick="btnsubmit_Click">
-        <div class="redButtonBG">&nbsp;&nbsp;בצע הזמנה</div>
-        </asp:LinkButton>-->
+        <h2 class="withBG">
+           פרטי הזמנה<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
+        </h2>
+        <div  class="total-panel">
+
+
+       <table class="total_table">
+        <tr>
+<td>סה"כ </td>
+<td class="td_total"> <span id="total_wrapper"> </span> ש"ח</td>
+       </tr>
+               <tr>
+<td>משלוח</td>
+<td class="td_total"> <span id="shipping_wrapper"> </span> ש"ח</td>
+       </tr>
+               <tr>
+<td>לתשלום</td>
+<td class="td_total"> <span id="grand_total_wrapper"> </span> ש"ח</td>
+       </tr>
+   </table>
+</div>
+        <%= submit_tag "Save changes", :id => "submit", :name => "submit", :class => "form_submit", :disabled => false, :disable_with => "Please wait..." %>
+        <%end%>
+
 </div>
