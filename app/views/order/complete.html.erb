@@ -1,0 +1,49 @@
+ההזמנה נקלטה במערכת!
+    <br />
+  <span style="font-size:20px" > מספר ההזמנה הוא: <span style="color:red">  <%=@order.id %> </span></span>
+    <br /> <br />
+    <strong> פרטי ההזמנה: </strong><br/><br />
+    <table style="width:600px">
+<%@order.orderitems.each do |orderitem| %>
+<tr>
+    <td style="vertical-align:top"><% unless orderitem.image.nil? %>
+             <%=image_tag(orderitem.image.to_s) %>
+             <%else%>
+             <%=image_tag("noBook.jpg") %>
+             <%end%></td>
+             <td  style="vertical-align:top"> 
+<strong style="font-size:20px"><%=orderitem.title%> </strong> <br \>
+מחבר: <%=orderitem.author.to_s%>
+             </td>
+               
+               <td  style="vertical-align:top"><small>
+<%=orderitem.price%> ליחידה</small> <br />
+<%=orderitem.price * orderitem.quantity%> ש"ח
+               </td>
+              
+</tr>
+<%end%>
+<tr class="total_tr">
+<td style="border-top:solid 2px #000"> </td>
+<td style="border-top:solid 2px #000; font-weight:600; text-align:left; padding-left:20px">סה"כ:</td>
+<td style="border-top:solid 2px #000"><%=@order.products_price%> ש"ח</td>
+</tr>
+<tr >
+<td> </td>
+<td style=" font-weight:600; text-align:left; padding-left:20px">משלוח: </td>
+<td><%=@order.shipping_price%> ש"ח</td>
+</tr>
+<tr >
+<td> </td>
+<td style=" font-weight:600; text-align:left; padding-left:20px">לתשלום: </td>
+<td><%=@order.grandtotal%> ש"ח</td>
+</tr>
+
+</table>
+<br /> <br /> <br />
+    נציג השרות שלנו יצור עמכם קשר טלפוני על מנת לוודא פרטים, ולקבל מכם את אפשרות התשלום.
+    <br />
+    כמו תמיד לכל בעיה / הערה תוכלו ליצור עימנו קשר בטלפון 03-9335302
+    <br />
+    <br />
+    סופר ספר - חנות הספרים לשרותכם! 

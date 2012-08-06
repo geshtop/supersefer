@@ -4,7 +4,7 @@ index = 0
 %>
 <%@shippdatasource.each do |ship| %>
 <div class="shipping_wrapper">
-<%=radio_button_tag "shipping_id" , ship.id,  ship.is_default?, {:class =>"rb"}%>	<%=ship.title%>
+<%=radio_button "order" ,"shipping_id" , ship.id, {:class =>"rb", :checked => ship.is_default?}%>	<%=ship.title%>
 <div>
 <table class="shipping-table">
 <%ship.shippingoptions.each do |option| %>

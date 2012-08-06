@@ -4,7 +4,7 @@
   <title>Supersefer</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  
+  <script type="text/javascript" charset="utf-8">var ROOT_PATH = '<%= root_path %>';</script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -22,6 +22,7 @@
         <%= link_to 'הרשמה', new_user_registration_path %> או <%= link_to 'כניסה', new_user_session_path %>
     <% end %>
 </div>
+
 
 
                 	<%=link_to image_tag("topLogo.jpg", :style=>"float:left") , :controller => "/book", :action => "index" %>
@@ -81,7 +82,14 @@
                         <td valign="top" class="ContentPlaceHolder">
                              <div  class="content_wrapper">
                                 
-                              
+                         <div  class="flash">
+                            <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="error"><%= flash[:error] %></p>
+    <% end %>
+                         </div>     
 
                             <%= yield %>
                     <div style="clear:both"> </div>

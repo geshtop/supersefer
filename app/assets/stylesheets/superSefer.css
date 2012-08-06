@@ -484,3 +484,8 @@ color:#2D8C14;
      .cart_page .weight_tr td{font-size:10px;}
      .cart_page .total_table td{padding-left:20px; }
      .cart_page .total_table td.td_total{font-weight:600;}
+
+
+
+.flash .notice{position:absolute; background:red; padding:10px;}
+.contact_page table td{padding-top:7px;}

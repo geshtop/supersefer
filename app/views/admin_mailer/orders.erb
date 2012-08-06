@@ -1,0 +1,80 @@
+<html >
+                            <body><center>
+                            <table width="600"  dir="rtl">
+                            <tr>
+                            <td >
+                             <img src="http://www.supersefer.com/App_Themes/superSefer/images/topLogo.jpg" />
+                             
+                            </td>
+                            </tr>
+                            <tr>
+                            <td  align="right"  style="font-family:Arial; font-size:14pt">
+                           <%=@order.user_first_name %> &nbsp; שלום רב, 
+                           <br />
+אנו מודים לך שבחרת לבצע את הרכישה באמצעותינו. 
+<br />
+<span style="color:red; font-size:20px">
+מספר ההזמנה הוא: <%=@order.id%> </span>
+<br /><br/>
+פרטי ההזמנה:
+<br/> <br />
+<table style="width:600px">
+<%@order.orderitems.each do |orderitem| %>
+<tr>
+    <td style="vertical-align:top"><% unless orderitem.image.nil? %>
+             <%=image_tag(orderitem.image.to_s) %>
+             <%else%>
+             <%=image_tag("noBook.jpg") %>
+             <%end%></td>
+             <td  style="vertical-align:top"> 
+<strong style="font-size:20px"><%=orderitem.title%> </strong> <br \>
+מחבר: <%=orderitem.author.to_s%>
+             </td>
+               
+               <td  style="vertical-align:top"><small>
+<%=orderitem.price%> ליחידה</small> <br />
+<%=orderitem.price * orderitem.quantity%> ש"ח
+               </td>
+              
+</tr>
+<%end%>
+<tr class="total_tr">
+<td style="border-top:solid 2px #000"> </td>
+<td style="border-top:solid 2px #000; font-weight:600; text-align:left; padding-left:20px">סה"כ:</td>
+<td style="border-top:solid 2px #000"><%=@order.products_price%> ש"ח</td>
+</tr>
+<tr >
+<td> </td>
+<td style=" font-weight:600; text-align:left; padding-left:20px">משלוח: </td>
+<td><%=@order.shipping_price%> ש"ח</td>
+</tr>
+<tr >
+<td> </td>
+<td style=" font-weight:600; text-align:left; padding-left:20px">לתשלום: </td>
+<td><%=@order.grandtotal%> ש"ח</td>
+</tr>
+
+</table>
+<br />
+במהלך השעות הקרובות יצרו עמכם קשר טלפוני לסיים את הליך ההזמנה . 
+<br />
+נציגנו ישמחו לשרתכם בכל עניין, או בעיה..
+<br />
+פרטים בטלפון :03-9335302
+<br />
+בהצלחה!
+<br />
+צוות סופר ספר - חנות הספרים שלי! 
+
+                                                 <br /> <br />
+                                              
+                                                <a href=http://www.supersefer.com/he/> לאתר 
+                            </a></td>
+                            </tr>
+
+                            </table>
+
+                            </center>
+                               
+                            </body>
+                            </html>

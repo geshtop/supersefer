@@ -1,6 +1,6 @@
 
  <div><label for="has_shipping_address">שלח לכתובת אחרת</label> 
-   <%= check_box_tag "has_shipping_address" %></div>
+   <%= check_box "order" ,"has_shipping_address" %></div>
 
         <div  id="ShippingData">
             <table>
@@ -9,7 +9,7 @@
                         <label for="shipping_first_name">שם פרטי:</label> 
                     </td>
                     <td>
-                        <%= text_field_tag "shipping_first_name" %>
+                        <%= text_field :order, :shipping_first_name %>
                     </td>
                 </tr>
                 <tr>
@@ -17,7 +17,7 @@
                         <label for="shipping_last_name">שם משפחה:</label> 
                     </td>
                     <td>
-                        <%= text_field_tag "shipping_last_name" %>
+                        <%= text_field :order, :shipping_last_name %>
                     </td>
                    
                 </tr>
@@ -25,31 +25,31 @@
                     <td>
                         <label for="shipping_phone">טלפון:</label> </td>
                     <td>
-                        <%= text_field_tag "shipping_phone" %>
+                        <%= text_field :order, :shipping_phone %>
                     </td>
                    
                 </tr>
                 <tr>
                     <td>
                       <label for="shipping_address">כתובת:</label> </td>
-                    <td >  <%= text_field_tag "shipping_address" %></td>
+                    <td >  <%= text_field :order, :shipping_address %></td>
                 </tr>
                  <tr>
                     <td>
                       <label for="shipping_city">עיר:</label>  </td>
-                    <td >  <%= text_field_tag "shipping_city" %></td>
+                    <td >  <%= text_field :order, :shipping_city %></td>
                 </tr>
                   <tr>
                     <td>
                      
      <label for="shipping_country">ארץ:</label>  </td>
-                    <td >  <%= text_field_tag "shipping_country" %></td>
+                    <td >  <%= text_field  :order, :shipping_country %></td>
                 </tr>
                 <tr>
                     <td>
                       
    <label for="shipping_zipcode">מיקוד:</label> </td>
-                    <td >  <%= text_field_tag "shipping_zipcode" %></td>
+                    <td >  <%= text_field :order, :shipping_zipcode %></td>
                 </tr>
             </table>
         </div>

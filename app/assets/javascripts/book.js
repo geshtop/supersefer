@@ -82,9 +82,16 @@
 				});
 		}
 	function SelectShipping(){
+		
 		if($("#total_weight").length > 0){
+		var totalproducts = $("#grand_total").val()*1;
+		if(totalproducts==0)
+		{
+			location.href = ROOT_PATH
+
+		}
 		var totalweight = $("#total_weight").val() * 1;
-		var totalproducts = $("#grand_total").val()*1;		
+		
 		var shipping_wrapper = $(".shipping_wrapper");
 		var trcoll = $(".ship_tr");
 		var currentshipping = 0;

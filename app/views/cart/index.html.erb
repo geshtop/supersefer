@@ -1,5 +1,5 @@
 <div class="cart_page" >
-      <%=form_tag ("/order") do%>
+      <%=form_tag ("/order/create") do%>
         <%=image_tag("kupa.jpg") %>
         <h2 class="withBG">
             פרטי הזמנה <%=image_tag("redTriangle.jpg" , :class => "redTriangle") %>   
@@ -46,7 +46,8 @@
          <h2 class="withBG">
            הערות נוספות<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
         </h2>
-        <%= text_area_tag "notes", nil, :class=>"area"%>
+        <%= text_area :order,  :notes, :cols => 40, :rows => 15,  :class=>"area"%>
+      
         <h2 class="withBG">
            פרטי הזמנה<%=image_tag("redTriangle.jpg", :class=> "redTriangle") %>
         </h2>
