@@ -8,13 +8,16 @@
 טלפון: 03-9335302<br />
 <br /><br />
  כמו"כ ניתן ליצור איתנו קשר באמצעות טופס זה
+ <%=form_tag "/contact/contact_us" ,:id =>"contact_form" do %>
     <table>
         <tr>
             <td>
-                שם:
+                שם מלא:
             </td>
             <td>
-            	<input name="userName" type="text" maxlength="50" />
+            	<input name="userName" 
+ value="<%=(current_user.nil?)? "" : current_user.first_name + " " + current_user.last_name%>"
+                type="text" maxlength="50" class="required" />
               
             </td>
             <td>
@@ -26,7 +29,8 @@
                 מייל
             </td>
             <td>
-            	<input name="mail" type="text" maxlength="50" />
+            	<input name="mail" type="text" maxlength="50" 
+                value="<%=(current_user.nil?)? "" : current_user.email%>" class="required email" />
                
             </td>
             <td>
@@ -38,7 +42,7 @@
                 נושא
             </td>
             <td>
-            	<input name="subject" type="text" maxlength="50" />
+            	<input name="subject" type="text" maxlength="50" class="required" />
                
             </td>
             <td>
@@ -49,7 +53,7 @@
                 תוכן
             </td>
             <td>
-            	<textarea name="body" style="widht:250px; height:150px"></textarea>
+            	<textarea name="body" class="required" style="height:150px"></textarea>
                 
             </td>
             <td>
@@ -57,9 +61,10 @@
         </tr>
         <tr>
             <td>
-            	<input type="submit" class="redButtonLink" />
+            	<input type="submit" class="redButtonLink" value="שלח" />
                 
             </td>
         </tr>
     </table>
+<%end%>
 </div>

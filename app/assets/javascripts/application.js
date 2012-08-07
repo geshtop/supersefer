@@ -16,6 +16,9 @@
 //= require jquery-1.7.2.min
 //= require jquery-ui-1.8.22.custom.min
 //= require accordion
-//= require book
+//= require supersefer
+
+//= require jquery.validate
+//= require localization/messages_he.js
 
 

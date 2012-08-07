@@ -489,3 +489,6 @@ color:#2D8C14;
 
 .flash .notice{position:absolute; background:red; padding:10px;}
 .contact_page table td{padding-top:7px;}
+.contact_page input[type="text"] {width:200px; font-family:arial;}
+.contact_page textarea {width:200px; font-family:arial; font-size:11px; }
+label.error {color:red; font-size:11px; }

@@ -1,0 +1,50 @@
+
+<table width="500; direction:rtl; text-align:right"  dir="rtl">
+<tr>
+<td style="background:#ccc; font-weight:600; width:150px;">
+שם מלא:
+</td>
+<td>
+<%=@userName%>
+</td>
+</tr>
+
+<tr>
+<td style="background:#ccc; font-weight:600; width:150px;">
+דוא"ל
+</td>
+<td>
+<%=@mail%>
+</td>
+</tr>
+<tr>
+<td style="background:#ccc; font-weight:600; width:150px;">
+נושא:
+</td>
+<td>
+<%=@subject%>
+</td>
+</tr>
+<tr>
+<td style="background:#ccc; font-weight:600; width:150px;">
+תוכן:
+</td>
+<td>
+<%=@body%>
+</td>
+</tr>
+<%if @user_id > 0 %>
+<tr>
+<td style="background:#ccc; font-weight:600; width:150px;">
+משתמש רשום:
+</td>
+<td>
+id: <%=@user_id%> <br />
+user_phone: <%=@user_phone%> <br />
+user_name: <%=@user_name%> <br />
+user_email: <%=@user_email%> 
+
+</td>
+</tr>
+<%end%>
+</table>
