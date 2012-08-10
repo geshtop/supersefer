@@ -37,6 +37,7 @@ end
 
 group :development, :test do
   gem 'mysql'
+  gem "ruby-mysql" 
 
 end
 
