@@ -5,9 +5,8 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'mysql'
-gem "ruby-mysql" #fixed the hebrew in ruby
+#gem 'mysql'
+
 gem 'jquery-rails'
 gem 'devise' #user member ship
 gem 'activeadmin' #the rails admin module GREAT!!!
@@ -33,6 +32,14 @@ group :development, :test	do
 	gem "rspec"
 	gem "rspec-rails"
 	gem "factory_girl_rails"
+end
+
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem "ruby-mysql" #fixed the hebrew in ruby
 end
 
 

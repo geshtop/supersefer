@@ -9,11 +9,13 @@ end
 
 
  def sessionid
+
   	result = request.session_options[:id]
-  	 if request.cookies[:session_id].nil?
-		  request.cookies[:session_id] = { :value => result, :expires =>  1.week.from_now}
+    cookies[:session_id] = result
+  	 if cookies[:session_id].nil?
+		  cookies[:session_id] = { :value => result, :expires =>  1.week.from_now}
 	   else
-		  result = request.cookies[:session_id]
+		  result = cookies[:session_id]
   	 end
 	result
   end
