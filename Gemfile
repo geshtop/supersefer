@@ -5,11 +5,11 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql'
+
 
 gem 'jquery-rails'
 gem 'devise' #user member ship
-gem "ruby-mysql"
+
 gem 'activeadmin' #the rails admin module GREAT!!!
 #gem 'carrierwave' #thie image upload option  paperclip
 gem 'client_side_validations'
@@ -33,6 +33,11 @@ group :development, :test	do
 	gem "rspec"
 	gem "rspec-rails"
 	gem "factory_girl_rails"
+end
+
+group :development, :test do
+  gem 'mysql'
+
 end
 
 group :production do

@@ -27,7 +27,10 @@ test:
   host: localhost
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  encoding: utf8
+  database: ddb
+  username: postgres
+  port: 5432
+  password: admin
+  host: localhost
