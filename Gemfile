@@ -5,10 +5,11 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'mysql'
+gem 'mysql'
 
 gem 'jquery-rails'
 gem 'devise' #user member ship
+gem "ruby-mysql"
 gem 'activeadmin' #the rails admin module GREAT!!!
 #gem 'carrierwave' #thie image upload option  paperclip
 gem 'client_side_validations'
@@ -38,9 +39,7 @@ group :production do
   gem 'pg'
 end
 
-group :development, :test do
-  gem "ruby-mysql" #fixed the hebrew in ruby
-end
+
 
 
 # To use ActiveModel has_secure_password
