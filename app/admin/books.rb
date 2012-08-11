@@ -7,7 +7,7 @@ ActiveAdmin.register Book do
 	   	f.input :description
 	   	f.input :publisher
 	    f.input :image, :as => :rich_picker,  :config =>{:style => "width:400px !important"} 
-	    f.input :status_id
+	    f.input :status
 	    f.input :price
 	    f.input :weight	    
 	    f.input :priority
