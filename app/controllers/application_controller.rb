@@ -10,12 +10,10 @@ end
 
  def sessionid
 
-  	result = request.session_options[:id]
-    cookies[:session_id] = result
-  	 if cookies[:session_id].nil?
-		  cookies[:session_id] = { :value => result, :expires =>  1.week.from_now}
-	   else
-		  result = cookies[:session_id]
+  	result = request.session[:basket_id]
+  	 if request.session[:basket_id].nil?
+		  request.session[:basket_id] = request.session_options[:id]
+		  result = request.session[:basket_id]
   	 end
 	result
   end
