@@ -2,12 +2,12 @@
 <%unless @book.nil?%>
 
 <div  style="direction: rtl; font-size:1.2em">
-            <div style="float:right; width:80px; text-align:center; margin-left:10px;">
+            <div style="float:right; width:160px; text-align:center; margin-left:10px;">
 
              <% unless @book.image.nil? %>
-             <%=image_tag(@book.image.to_s, :width=>"80px", :alt => @book.title) %>
+             <%=image_tag(@book.image.url(:medium), :width=>"160px", :alt => @book.title) %>
              <%else%>
-             <%=image_tag("noBook.jpg", :width=>"80px", :alt => @book.title) %>
+             <%=image_tag("noBook.jpg", :width=>"160px", :alt => @book.title) %>
              <%end%>
               
                      

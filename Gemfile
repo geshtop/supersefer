@@ -13,7 +13,10 @@ gem 'devise' #user member ship
 gem 'activeadmin' #the rails admin module GREAT!!!
 #gem 'carrierwave' #thie image upload option  paperclip
 gem 'client_side_validations'
-gem 'rich' #rich text box and file manager
+gem "paperclip"
+gem 'aws-sdk', '~> 1.3.4'
+
+#gem 'rich' #rich text box and file manager
 
 # Gems used only for assets and not required
 # in production environments by default.

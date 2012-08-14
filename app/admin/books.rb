@@ -3,10 +3,10 @@ ActiveAdmin.register Book do
 	 f.inputs "Details" do
 	    f.input :author
 	    f.input :title
-	    f.input :body, :as => :rich, :config => {:width => "76%", :height => "400px"}
+	    f.input :body
 	   	f.input :description
 	   	f.input :publisher
-	    f.input :image, :as => :rich_picker,  :config =>{:style => "width:400px !important"} 
+	    f.input :image, :as => :file
 	    f.input :status
 	    f.input :price
 	    f.input :weight	    
@@ -22,7 +22,7 @@ ActiveAdmin.register Book do
  	column :price
  	column :image do |book|
  		
- 		image_tag	book.image.to_s, :style =>"width:50px"
+ 		image_tag	book.image.url(:thumb), :style =>"width:80px"
  		
  	end
  	default_actions

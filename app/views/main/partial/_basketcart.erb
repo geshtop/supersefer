@@ -19,7 +19,7 @@
 <%@basketitem.each do |basket| %>
 <tr>
 	<td><% unless basket.book.image.nil? %>
-             <%=image_tag(basket.book.image.to_s, :class=>"CartImg") %>
+             <%=image_tag(basket.book.image.url(:thumb), :class=>"CartImg") %>
              <%else%>
              <%=image_tag("noBook.jpg", :class=>"CartImg") %>
              <%end%></td>
