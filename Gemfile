@@ -9,8 +9,8 @@ gem 'rails', '3.2.1'
 gem 'jquery-rails'
 gem 'devise' #user member ship
 
-#gem 'activeadmin' #the rails admin module GREAT!!!
-gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin.git'
+gem 'activeadmin' #the rails admin module GREAT!!!
+#gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin.git'
 #gem 'carrierwave' #thie image upload option  paperclip
 gem 'client_side_validations'
 gem "paperclip"
@@ -27,7 +27,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
 end
-
+  gem "ruby-mysql"  
+  gem 'mysql'
 group :development, :test	do
 	gem "rspec"
 	gem "rspec-rails"
@@ -35,8 +36,6 @@ group :development, :test	do
 end
 
 group :development, :test do
-  gem 'mysql'
-  gem "ruby-mysql" 
 
 end
 
