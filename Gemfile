@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'devise' #user member ship
 
 #gem 'activeadmin' #the rails admin module GREAT!!!
-gem 'active_admin', :git => 'https://github.com/gregbell/active_admin.git'
+gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin.git'
 #gem 'carrierwave' #thie image upload option  paperclip
 gem 'client_side_validations'
 gem "paperclip"
