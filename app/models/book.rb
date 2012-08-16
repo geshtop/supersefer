@@ -12,7 +12,7 @@ class Book < ActiveRecord::Base
     has_attached_file :image,
     :styles =>{
       :thumb => "80x120>", :medium => "160x240>"
-    }
+    },
     :storage => :s3,
     :s3_credentials => {
       :bucket            => ENV['S3_BUCKET_NAME'],
