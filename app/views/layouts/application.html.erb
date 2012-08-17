@@ -25,7 +25,7 @@
 
 
 
-                	<%=link_to image_tag("topLogo.jpg", :style=>"float:left") , :controller => "/book", :action => "index" %>
+                	<%=link_to image_tag("topLogo.jpg", :style=>"float:left") , root_url %>
                 	<%=image_tag("topRightBG.jpg", :style=>"float:right") %>
                    
    
@@ -34,7 +34,7 @@
                     <li class="category">קטגוריות</li>
                     <li class="homePage">
                     	
-                    <%=link_to "דף הבית", :controller => "/book", :action => "index"%>
+                    <%=link_to "דף הבית", root_url%>
 
                         </li>
                     <li class="aboutUs">
