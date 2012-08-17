@@ -26,12 +26,14 @@
              <%=image_tag("noBook.jpg") %>
              <%end%></td>
              <td  style="vertical-align:top"> 
-<strong style="font-size:20px"><%=orderitem.title%> </strong> <br \>
-מחבר: <%=orderitem.author.to_s%>
+<strong style="font-size:20px"><%=orderitem.title%> </strong> <br />
+מחבר: <%=orderitem.author.to_s%> <br />
+כמות : <%=orderitem.quantity%>
              </td>
                
                <td  style="vertical-align:top"><small>
 <%=orderitem.price%> ליחידה</small> <br />
+
 <%=orderitem.price * orderitem.quantity%> ש"ח
                </td>
               
