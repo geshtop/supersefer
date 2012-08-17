@@ -13,7 +13,8 @@ class AdminMailer < ActionMailer::Base
 	@user_phone = user_phone
 	@user_name = user_name
 	@user_email = user_email
-    mail(:to => email, :bcc => ["geula.shoshan@gmail.com", "g@geshtop.com"], :from=> @mail, :subject => "New Contact " + @subject.to_s)
+	@recipes = ["geula.shoshan@gmail.com", "g@geshtop.com"]
+    mail(:to => email, :bcc => @recipes , :from=> @mail, :subject => "New Contact " + @subject.to_s)
 
    end
 end
