@@ -19,7 +19,6 @@ class OrderController < ApplicationController
   	@order.user_country = current_user.country
   	@order.user_zipcode = current_user.zipcode
   	@order.user_id = current_user.id
-  	@order.user_id = current_user.id
 	
 	@total = 0
 	@total_weight = 0
@@ -59,7 +58,7 @@ class OrderController < ApplicationController
       if @order.save
          #### save order items
         @basketlist.each do |basket|
-         @oi= @order.orderitems.create()
+         @oi= @order.orderitems.new
          @oi.book_id = basket.book_id
          @oi.quantity = basket.quantity
          @oi.title = basket.book.title
@@ -71,7 +70,7 @@ class OrderController < ApplicationController
          @oi.author = basket.book.author.title
         end
         @oi.publisher = basket.book.publisher
-        @oi.image = basket.book.image
+        #@oi.image = basket.book.image
         @oi.price = basket.book.price
         @oi.status_id = 1
         @oi.language_id = 1
