@@ -7,7 +7,7 @@
 <%@order.orderitems.each do |orderitem| %>
 <tr>
     <td style="vertical-align:top"><% unless orderitem.image.nil? %>
-             <%=image_tag(orderitem.image.to_s) %>
+             <%=image_tag(orderitem.image) %>
              <%else%>
              <%=image_tag("noBook.jpg") %>
              <%end%></td>

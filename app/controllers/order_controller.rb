@@ -70,7 +70,8 @@ class OrderController < ApplicationController
          @oi.author = basket.book.author.title
         end
         @oi.publisher = basket.book.publisher
-        #@oi.image = basket.book.image
+         @oi.image = basket.book.image.url(:thumb).to_s
+
         @oi.price = basket.book.price
         @oi.status_id = 1
         @oi.language_id = 1
