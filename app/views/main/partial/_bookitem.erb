@@ -4,11 +4,9 @@
 <div  class="book" >
               <strong class="bookName"><%=link_to dataitem.title , :controller=>"/book", :action => "details", :id=> dataitem.id%></strong>
               <div class="right_side">
-           <% unless dataitem.image.nil? %>
+
              <%=link_to  image_tag(dataitem.image.url(:thumb), :class=>"imgBook"), :controller=>"/book", :action => "details", :id=> dataitem.id%>
-             <%else%>
-             <%=link_to  image_tag("noBook.jpg", :class=>"imgBook"), :controller=>"/book", :action => "details", :id=> dataitem.id%>
-             <%end%>
+             
               <%=image_tag("selectbutton.jpg", :class=>"selectbutton", :dataid => dataitem.id) %>
            </div>
               <div  class="bookData">

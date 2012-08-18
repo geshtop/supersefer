@@ -493,3 +493,26 @@ color:#2D8C14;
 .contact_page input[type="text"] {width:200px; font-family:arial;}
 .contact_page textarea {width:200px; font-family:arial; font-size:11px; }
 label.error {color:red; font-size:11px; }
+
+
+/*autocomplete*/
+.top .search_panel {position:absolute; top:42px; left:40%;}
+.top .search_panel  .search .input-panel{float:right; width:353px; padding:2px; padding-left:1px; height:30px; background:url(/assets/searchField.gif) no-repeat; margin-bottom:4px; }
+.top .search_panel  .search .input-panel .input{width:320px; float:left;}
+.top .search_panel .search .input-panel .input .txt{width:303px; padding:7px; padding-left:10px; border:0px none; background:none; color:#888888; font-size:13px; height:17px; overflow:hidden; }
+.top .search_panel  .search .button{width:90px; height:26px; background: url(/assets/search_button.gif); float:right; color:#fff; font-size:14px; margin-top:1px; cursor:pointer; text-align:center; padding-top:7px; font-weight:600; text-shadow: 1px 1px 0px #107db5} 
+
+
+
+
+
+/*--------------------------------------------------------*/
+/*----------------------AUTOCOMPLETE----------------------*/
+/*--------------------------------------------------------*/
+.ui-autocomplete {padding: 0px;  text-align: right; direction: rtl; border-right: 1px solid #ff7b01; background: url(/assets/right-shadow-with-border.png) right repeat-y;  overflow: hidden;   z-index: 80000; padding-right:5px;width:353px; }
+.ui-autocomplete {list-style-position: outside;list-style: none;  padding: 0; margin: 0; background:#fff;}
+.ui-autocomplete li {margin: 0px;  padding-left:8px; padding-right:30px; cursor: default;  display: block; color:#32539e;  line-height: 21px; font-size:11px;  overflow: hidden;   border-bottom:solid 1px #dbdbdb;}
+.ui-autocomplete  li:hover {background-color: #bfbfbf;    color: white;}
+
+
+

@@ -32,5 +32,17 @@ class BookController < ApplicationController
     render :partial => 'main/partial/basketcart'
   end
 
+  def search
+    @books = []
+     term = params[:term]
+      q = "%#{term}%"
+    unless q == ''
+      #@books = Book.all
+      #@books = Book.where("title like ? " , q).limit(20).order("title")
+      @books = Book.where("title like ? " , q).limit(50)
+
+    end
+    render :layout => false
+  end
 
 end

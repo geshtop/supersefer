@@ -128,4 +128,16 @@
 	}
 
 	
+
+	$(function() {
+
+		$( "#search_txt" ).autocomplete({
+			source: "book/search",
+			minLength: 2
+			//,
+			//select: function( event, ui ) {
+			//	alert(ui.item.id)		
+			//}
+		});
+	});
 	

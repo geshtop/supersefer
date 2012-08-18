@@ -9,10 +9,9 @@ class Book < ActiveRecord::Base
   validates_attachment_size :image, :less_than => 5.megabytes
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
 
-	has_attached_file :image, :styles =>{
-      :thumb => "80x120>", :medium => "160x240>"
-    }
+
     has_attached_file :image,
+    :default_url =>   "noBook.jpg",
     :styles =>{
       :thumb => "80x120>", :medium => "160x240>"
     },

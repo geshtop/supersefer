@@ -1,0 +1,11 @@
+[ 
+<% @books.each do |book| %>
+	{
+		"id" : <%=book.id %>,
+		"label" : "<%=book.title %>",
+		"value": "<%=book.title %>"
+	}
+<% unless book.id == @books.last.id %>,<% end %>
+<% end %>
+]
+
