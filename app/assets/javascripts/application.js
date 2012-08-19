@@ -20,5 +20,6 @@
 
 //= require jquery.validate
 //= require localization/messages_he.js
+//= require lightbox
 
 

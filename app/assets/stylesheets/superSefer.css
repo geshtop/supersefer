@@ -509,9 +509,9 @@ label.error {color:red; font-size:11px; }
 /*--------------------------------------------------------*/
 /*----------------------AUTOCOMPLETE----------------------*/
 /*--------------------------------------------------------*/
-.ui-autocomplete {padding: 0px;  text-align: right; direction: rtl; border-right: 1px solid #ff7b01; background: url(/assets/right-shadow-with-border.png) right repeat-y;  overflow: hidden;   z-index: 80000; padding-right:5px;width:353px; }
-.ui-autocomplete {list-style-position: outside;list-style: none;  padding: 0; margin: 0; background:#fff;}
-.ui-autocomplete li {margin: 0px;  padding-left:8px; padding-right:30px; cursor: default;  display: block; color:#32539e;  line-height: 21px; font-size:11px;  overflow: hidden;   border-bottom:solid 1px #dbdbdb;}
+.ui-autocomplete {padding: 0px;  text-align: right; direction: rtl; border-left: 1px solid #ff7b01; border-bottom:20px solid #ff7b01; background: url(/assets/right-shadow-with-border.png) right repeat-y;  overflow: hidden;   z-index: 80000; padding-right:5px;width:353px; }
+.ui-autocomplete {list-style-position: outside;list-style: none;  padding: 0; margin: 0; background-color:#fff;}
+.ui-autocomplete li {margin: 0px;  margin-right:2px; margin-left:2px;  padding-left:8px; padding-right:30px; cursor: default;  display: block; color:#32539e;  line-height: 21px; font-size:11px;  overflow: hidden;   border-bottom:solid 1px #dbdbdb;}
 .ui-autocomplete  li:hover {background-color: #bfbfbf;    color: white;}
 
  .clear_search {font-size:10px;}
