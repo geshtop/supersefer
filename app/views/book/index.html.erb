@@ -1,9 +1,7 @@
  <h2 style="direction:ltr; text-align:left"> TODO:</h2>
                                  <ul style="direction:ltr; text-align:left">
                                     <li>  add lightbod for see the large image </li>
-                                    <li> active admin create module for orders</li>
-                                    <li> add search autocomplete (by product by author to site)</li>  
-                                    <li> config send mail on server </li>
+                                    <li> active admin create module for orders</li> 
                                     <li> add best seller </li>
                                     <li> add news marquee</li>
                                     <li> add ckeditor </li>
@@ -23,16 +21,19 @@
         <%unless (@subcategory.category.nil?)%><%=@subcategory.category.title %> &gt;
 
         <%end%>
-    	<%=@subcategory.title %> </h3>
+    	<%=@subcategory.title %> 
+<%=link_to "הצג הכל", root_url , :class => "clear_search" %>
+    </h3>
 
 	<%elsif (@term != '')%>
-    <h3> תוצאות חיפוש עבור   '<%= @term %>' </h3>
+    <h3> תוצאות חיפוש עבור   '<%= @term %>' 
+     <%=link_to "הצג הכל", root_url , :class => "clear_search" %>
+     </h3>
     <%end%>
 <%if @books.count > 0%>
 <%@books.each do |book, index| %>
 <%= render  :partial => "main/partial/bookitem", :locals =>{:dataitem=> book}%>
 <%end%>
 <%else%>
-מצטערים אין ספרים תחת קטגוריה זו!
-<%end%>
+מצטערים לא נמצאו ספרים!  נסה שנית או חזור <%=link_to "לדף הבית", root_url %> <%end%>
 </div>

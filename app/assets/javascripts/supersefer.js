@@ -138,6 +138,11 @@
 			//select: function( event, ui ) {
 			//	alert(ui.item.id)		
 			//}
+		}).keypress(function(e){
+			if(e.keyCode== 13)
+			{
+				$("#inputSearch").click();
+			}
 		});
 		$("#inputSearch").click(function(){
 			var q = $( "#search_txt" ).val();

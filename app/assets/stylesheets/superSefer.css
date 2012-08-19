@@ -498,8 +498,8 @@ label.error {color:red; font-size:11px; }
 /*autocomplete*/
 .top .search_panel {position:absolute; top:42px; left:40%;}
 .top .search_panel  .search .input-panel{float:right; width:353px; padding:2px; padding-left:1px; height:30px; background:url(/assets/searchField.gif) no-repeat; margin-bottom:4px; }
-.top .search_panel  .search .input-panel .input{width:320px; float:left;}
-.top .search_panel .search .input-panel .input .txt{width:303px; padding:7px; padding-left:10px; border:0px none; background:none; color:#888888; font-size:13px; height:17px; overflow:hidden; }
+.top .search_panel  .search .input-panel .input{width:353px; float:left;}
+.top .search_panel .search .input-panel .input .txt{width:336px; padding:7px; padding-left:10px; border:0px none; background:none; color:#888888; font-size:13px; height:17px; overflow:hidden; }
 .top .search_panel  .search .button{width:90px; height:26px; background: url(/assets/search_button.gif); float:right; color:#fff; font-size:14px; margin-top:1px; cursor:pointer; text-align:center; padding-top:7px; font-weight:600; text-shadow: 1px 1px 0px #107db5} 
 
 
@@ -514,5 +514,5 @@ label.error {color:red; font-size:11px; }
 .ui-autocomplete li {margin: 0px;  padding-left:8px; padding-right:30px; cursor: default;  display: block; color:#32539e;  line-height: 21px; font-size:11px;  overflow: hidden;   border-bottom:solid 1px #dbdbdb;}
 .ui-autocomplete  li:hover {background-color: #bfbfbf;    color: white;}
 
-
+ .clear_search {font-size:10px;}
 
