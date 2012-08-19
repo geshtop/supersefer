@@ -12,7 +12,7 @@ class BookController < ApplicationController
       		@books=Book.where(subcategory_id: sub, status_id: 1).order("priority Desc, title")
       	elsif @term != ''
           q = "%#{@term}%"
-          @books = Book.joins("LEFT JOIN `authors` ON `authors`.`id` = `books`.`author_id`").where("`books`.`title`  like ? or `authors`.`title`  like ?" , q , q)
+          @books = Book.joins("LEFT JOIN authors ON authors.id = books.author_id").where("books.title  like ? or authors.title  like ?" , q , q)
         else
       		@books=Book.where(status_id: 1).order("priority DESC, title")
       	end
@@ -43,7 +43,7 @@ class BookController < ApplicationController
       #@books = Book.all
       #@books = Book.where("title like ? " , q).limit(20).order("title")
       #@books = Book.joins(:author).where("`books`.`title`  like ? or `authors`.`title`  like ?" , q , q).limit(20)
-      @books = Book.joins("LEFT JOIN `authors` ON `authors`.`id` = `books`.`author_id`").where("`books`.`title`  like ? or `authors`.`title`  like ?" , q , q).limit(20)
+      @books = Book.joins("LEFT JOIN authors ON authors.id = books.author_id").where("books.title  like ? or authors.title  like ?" , q , q).limit(20)
 
     end
     render :layout => false
