@@ -18,14 +18,16 @@
                             </ul>-->
 <div style="clear:both"> </div>
 <div id="books_wrapper">
-<%unless (@subcategory.nil?)%>
-<h3>
-<%unless (@subcategory.category.nil?)%><%=@subcategory.category.title %> &gt;
+    <%if (!@subcategory.nil?)%>
+        <h3>
+        <%unless (@subcategory.category.nil?)%><%=@subcategory.category.title %> &gt;
 
-<%end%>
-	<%=@subcategory.title %> </h3>
+        <%end%>
+    	<%=@subcategory.title %> </h3>
 
-	<%end%>
+	<%elsif (@term != '')%>
+    <h3> תוצאות חיפוש עבור   '<%= @term %>' </h3>
+    <%end%>
 <%if @books.count > 0%>
 <%@books.each do |book, index| %>
 <%= render  :partial => "main/partial/bookitem", :locals =>{:dataitem=> book}%>

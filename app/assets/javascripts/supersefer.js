@@ -139,5 +139,9 @@
 			//	alert(ui.item.id)		
 			//}
 		});
+		$("#inputSearch").click(function(){
+			var q = $( "#search_txt" ).val();
+			location.href = ROOT_PATH + "?q=" + encodeURI(q)
+		});
 	});
 	
