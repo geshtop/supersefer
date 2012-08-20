@@ -13,7 +13,7 @@ class Book < ActiveRecord::Base
     has_attached_file :image,
     :default_url =>   "noBook.jpg",
     :styles =>{
-      :thumb => "80x120>", :medium => "160x240>", :large => "400X600>"
+      :thumb => "80x120>", :medium => "160x240>", :large => "352X528>"
     },
     :storage => Rails.env.production? ? :s3 : :filesystem,
     :s3_credentials => {

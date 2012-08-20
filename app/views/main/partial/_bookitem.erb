@@ -25,6 +25,9 @@
               <div class="book_weight">
                 משקל ליחידה: <%=dataitem.weight %>
             </div>
+                <div class="book_weight">
+               <%=link_to "קרא עוד..." , :controller=>"/book", :action => "details", :id=> dataitem.id%>
+            </div>          
               </div>
             </div>
              

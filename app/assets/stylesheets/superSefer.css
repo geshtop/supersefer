@@ -8,6 +8,7 @@ body
     background-color:#ECE2D6; 
 }
 a image{border:0px none;}
+#content_frame{min-width:988px;}
 .top
 {
     height:136px;
@@ -181,7 +182,7 @@ h2.withBG
     backgrond:green;
 }
 .bookData .book_top{
-    height:140px; overflow:hidden;
+    height:130px; overflow:hidden;
 }
 .bookDescription
 {
@@ -440,6 +441,7 @@ color:#2D8C14;
         background-color:#000000;
         color:White;
         font-size:28px;
+        padding-right:10px;
       
         
      }
@@ -469,6 +471,11 @@ color:#2D8C14;
         text-decoration:none;
         color:Black;
         cursor:default;
+        background:url(/assets/redButtonBG.jpg);
+        display:block;
+        width:145px;
+        height:23px;
+        cursor:pointer;
         
      }
      
@@ -496,7 +503,9 @@ label.error {color:red; font-size:11px; }
 
 
 /*autocomplete*/
-.top .search_panel {position:absolute; top:42px; left:40%;}
+.top .search_panel {position:absolute; top:42px;  width:100%;  }
+.top .search_panel  .search {margin-left:409px; margin-right:102px;}
+.top .search_panel  .search .search2{width:450px; margin:0 auto;}
 .top .search_panel  .search .input-panel{float:right; width:353px; padding:2px; padding-left:1px; height:30px; background:url(/assets/searchField.gif) no-repeat; margin-bottom:4px; }
 .top .search_panel  .search .input-panel .input{width:353px; float:left;}
 .top .search_panel .search .input-panel .input .txt{width:336px; padding:7px; padding-left:10px; border:0px none; background:none; color:#888888; font-size:13px; height:17px; overflow:hidden; }

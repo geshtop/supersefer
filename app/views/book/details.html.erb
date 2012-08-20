@@ -9,10 +9,11 @@
              <%else%>
              <%=image_tag("noBook.jpg", :width=>"160px", :alt => @book.title) %>
              <%end%>
-              
+              <%if @book.image.file? %>
               <a class="redButtonLink" rel="lightbox" href="<%=@book.image.url(:large)%>" ><span
                       style="display:block">להגדלה</span>
                       </a>
+                      <%end%>
                      
             </div> 
               
