@@ -174,7 +174,6 @@
   height:27px;
   float: right;
   outline: none;
-  background: url(/assets/lightbox/close.png);
 }
 /* line 117, ../sass/lightbox.sass */
 .lb-data .lb-close:hover {
