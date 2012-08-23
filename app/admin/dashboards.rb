@@ -1,5 +1,39 @@
 ActiveAdmin::Dashboards.build do
 
+  section "Recent Orders", :priority => 1 do
+    table_for Order.order('id desc').limit(10) do
+      #column("user_email") {|order| status_tag(order.status) }
+      column("ID"){|order| link_to order.id, admin_order_path(order)}
+      column("User"){|order| order.user.email }
+       column("Name"){|order| order.user_first_name + " " + order.user_last_name}
+       column("Phone"){|order| order.user_phone}
+     
+      column("Total") {|order|  order.grandtotal }
+      column("status"){|order| order.status.title}
+      column("complete")
+    end
+  end
+
+  section "Recent User", :priority => 2 do
+    table_for User.order('id desc').limit(10).each do |user|
+       column("User"){|user| link_to(user.email, admin_user_path(user)) }
+       column("Name"){|user| user.first_name + " " + user.last_name}
+       column("Phone"){|user| user.phone}
+       column("Address"){|user|
+        div do
+          user.address 
+        end
+        div do
+          user.city
+        end
+         div do
+          user.country
+        end       
+     }
+     end
+
+  end
+
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.
