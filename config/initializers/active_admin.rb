@@ -57,7 +57,7 @@ ActiveAdmin.setup do |config|
   # within the controller.
   # config.authentication_method = :authenticate_admin_user!
   config.authentication_method = :authenticate_active_admin_user!
-
+  config.register_javascript 'ckeditor/init.js'
   #see http://dan.doezema.com/2012/02/how-to-implement-a-single-user-model-with-rails-activeadmin-and-devise/
 
 

@@ -50,6 +50,9 @@ GEM
       sass (>= 3.1)
     builder (3.0.0)
     cancan (1.6.8)
+    ckeditor (3.7.1)
+      mime-types
+      orm_adapter
     client_side_validations (3.1.4)
     cocaine (0.2.1)
     coffee-rails (3.2.2)
@@ -189,6 +192,7 @@ DEPENDENCIES
   activeadmin
   aws-sdk (~> 1.3.4)
   cancan
+  ckeditor (= 3.7.1)
   client_side_validations
   coffee-rails (~> 3.2.1)
   devise

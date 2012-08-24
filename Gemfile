@@ -16,6 +16,7 @@ gem 'client_side_validations'
 gem "paperclip"
 gem 'aws-sdk', '~> 1.3.4'
 gem "cancan"
+gem "ckeditor", "3.7.1"
 #gem 'rich' #rich text box and file manager
 
 # Gems used only for assets and not required

@@ -1,4 +1,6 @@
 Supersefer::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   get "order/index"
 
   #mount Rich::Engine => '/rich', :as => 'rich'

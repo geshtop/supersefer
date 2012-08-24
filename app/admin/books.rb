@@ -3,7 +3,7 @@ ActiveAdmin.register Book do
 	 f.inputs "Details" do
 	    f.input :author
 	    f.input :title
-	    f.input :body
+	    f.input :body , :input_html => {:class => "ckeditor"}
 	   	f.input :description
 	   	f.input :publisher
 	    f.input :image, :as => :file
