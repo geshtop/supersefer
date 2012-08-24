@@ -17,7 +17,7 @@ end
   	 end
 	result
   end
-end
+
 
 
 def authenticate_active_admin_user!
@@ -27,3 +27,9 @@ def authenticate_active_admin_user!
       redirect_to root_path 
     end
   end
+
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url
+  end
+end

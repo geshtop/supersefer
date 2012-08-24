@@ -1,5 +1,6 @@
 
 ActiveAdmin.register User do
+  actions :all, :except => [:destroy, :new]
 
   form do |f|
     f.inputs "User Details" do

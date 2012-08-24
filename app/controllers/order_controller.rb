@@ -1,5 +1,7 @@
 class OrderController < ApplicationController
+  load_and_authorize_resource
   before_filter :authenticate_user!
+
   def create
     @basketlist = Basket.where(session_id: @my_session_id)
     if (@basketlist.count == 0)
@@ -95,6 +97,5 @@ class OrderController < ApplicationController
 
   def complete
     @order = Order.where(id: params[:id], user_id: current_user.id).first
-  
   end
 end
