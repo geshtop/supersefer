@@ -12,7 +12,7 @@ ActiveAdmin.register Book do
 	    f.input :weight	    
 	    f.input :priority
 	    f.input :subcategory
-	    f.input :best_seller
+	    f.input :best_seller, :as => :boolean
 	    f.input :language
   end
   f.buttons
