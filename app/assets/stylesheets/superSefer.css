@@ -355,22 +355,26 @@ color:#2D8C14;
   
 
     /*רב מכר עם הרקעים  של התמונה */
+
     div.AdvanceBestSeller
     {
         background-image:url('/assets/bestSelletBG.jpg');
         background-repeat:no-repeat;
         background-position:top left;
         height:183px;
-        position:relative;
         text-align:center;
         padding-top:5px;
         width:184px;
+        overflow: hidden;
+        position:relative;
     }
+
+        
     img.bookSeller
     {
         position:absolute;
-        top:46px;
-        left:99px;
+        top:33px;
+        left:89px;
         width:65px;
         height:92px;
     }
@@ -379,8 +383,8 @@ color:#2D8C14;
         width:53px;
         height:53px;
         position:absolute;
-        top:42px;
-        left:22px;
+        top:32px;
+        left:10px;
         color:White;
         font-weight:bold;
         padding-top:7px;
@@ -395,10 +399,11 @@ color:#2D8C14;
     }
      
      /*רב מכר - מבצעים */
+    div.bestsellerwrapper{direction:ltr; text-align: left}
      .bestSeller
      {
-        text-align:right;
-        direction:rtl;
+        position:relative;
+        
      }
      .topBestSeller
      {
@@ -414,14 +419,24 @@ color:#2D8C14;
         border-left:solid 1px #596358;
         height:150px;
         overflow:hidden;
+        position:relative;
      }
+     
+         div.bestSeller ul{height:142px;}
+    div.bestSeller li{position:relative; height:142px; background:url('/assets/bestSelletBookBG.jpg') bottom; width:184px;margin:0; padding:0;
+        list-style:none; }
+        div.bestSeller strong{ text-align: center;   display:block; }
      .bottomBestSeller
      {
         height:26px;
-        background-image:url('/assets/bestSeller.jpg');
+        background-image:url('/assets/bestSellerWritten.jpg');
         background-repeat:no-repeat;
         background-position:bottom left;
      }
+     #nextBtn{position:absolute; top:125px; left:40px;}
+     #nextBtn a{width:32px; height:32px; display:block; background: url('/assets/prevBestSeller.jpg') no-repeat }
+    #prevBtn{position:absolute; top:125px; left:10px;}
+    #prevBtn a{width:32px; height:32px; display:block; background: url('/assets/nextBestSeller.jpg') no-repeat }
      /*רב מכר מבצעים ---סוף */
      
      /*מוצרים בקופה*/

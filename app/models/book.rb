@@ -4,7 +4,7 @@ class Book < ActiveRecord::Base
 	belongs_to :author
 	belongs_to :status	
 	validates_presence_of :title, :status_id, :language_id, :subcategory_id, :price, :weight
-	attr_accessible :title, :body, :publisher, :status_id, :language_id, :weight,  :subcategory_id, :price, :image, :author_id, :priority, :description, :image_file_name #If exists
+	attr_accessible :title, :body,  :publisher, :status_id, :language_id, :weight,  :subcategory_id, :price, :image, :author_id, :priority, :description, :image_file_name, :best_seller #If exists
 	##mount_uploader :image, ImageUploader
   validates_attachment_size :image, :less_than => 5.megabytes
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']

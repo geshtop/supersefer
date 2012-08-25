@@ -1,0 +1,38 @@
+<% bestseller = Book.where(:status_id => 1, :best_seller => true)%>
+<div class="bestsellerwrapper">
+
+<div class="bestSeller">
+                                    <div class="topBestSeller">
+                                        <img src="/assets/spacer.gif" /></div>
+                                    <div id="slider" class="middleBestSeller">
+     <ul  class="bestselleritem"> 
+    <%bestseller.each do |book| %>
+  <li>
+       
+
+<div ><strong><%=book.title%></strong>
+     <%=link_to  image_tag(book.image.url(:thumb), :class=>"bookSeller"), :controller=>"/book", :action => "details", :id=> book.id%>
+
+            <div class="bookSellerPrice"> <%= book.price %> <br />ש"ח </div>
+            </div>
+       </li>
+        <%end%>
+         </ul>
+        
+    </div>
+                                    <div class="bottomBestSeller">
+                                        &nbsp;
+                                    </div>
+                                </div>
+</div>
+
+
+
+                                                                    
+                             <!--   
+                                        
+                                    </div>
+                                    <div class="bottomBestSeller">
+                                        &nbsp;
+                                    </div>
+                                </div>-->
