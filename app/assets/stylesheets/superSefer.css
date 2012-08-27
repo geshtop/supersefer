@@ -433,12 +433,17 @@ color:#2D8C14;
         background-repeat:no-repeat;
         background-position:bottom left;
      }
+     .bottomBox{
+background-image:url('/assets/bestSeller.jpg');
+
+     }
      #nextBtn{position:absolute; top:125px; left:40px;}
      #nextBtn a{width:32px; height:32px; display:block; background: url('/assets/prevBestSeller.jpg') no-repeat }
     #prevBtn{position:absolute; top:125px; left:10px;}
     #prevBtn a{width:32px; height:32px; display:block; background: url('/assets/nextBestSeller.jpg') no-repeat }
      /*רב מכר מבצעים ---סוף */
      
+     .news_wrapper{margin-top:20px;}
      /*מוצרים בקופה*/
      td.headercartTable
      {
