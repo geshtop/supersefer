@@ -5,7 +5,17 @@
                                     <div class="topBestSeller">
                                         <img src="/assets/spacer.gif" /></div>
                                     <div id="slider" class="middleBestSeller">
-     
+     <marquee height="150px" direction="up" scrollamount="1" style="overflow:hidden; width:100%; height:150px;" width="100%" onmouseover="this.stop()" onmouseout="this.start()">
+     	<%news.each do |new| %>
+     		<div class="new_item">
+     			<h2><%=new.title%></h2>
+     			<div class="new_body">
+     				<%=new.body.html_safe%>
+     			</div>
+     		</div>
+     	<%end%>
+</marquee>
+
         
     </div>
                                     <div class="bottomBestSeller bottomBox">

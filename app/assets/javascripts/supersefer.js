@@ -17,7 +17,9 @@
 				continuous: true ,
 				controlsShow:true,
 				nextText:'',
-				prevText:''
+				prevText:'',
+				speed:1500,
+				pause:10000
 			});
 		});
 
