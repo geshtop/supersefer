@@ -22,7 +22,8 @@ class BookController < ApplicationController
   def details
     @id = params[:id].to_i
     @book = Book.where(id:@id, status_id:1).first
-    #@book = Book.first
+    
+    #@book = Book.fit
 
   end
 
